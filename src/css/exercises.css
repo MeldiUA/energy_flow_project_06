@@ -1,0 +1,157 @@
+.exercises-section {
+  border-radius: 30px;
+  background: var(--second-background);
+}
+.exercises-title {
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 40px;
+}
+.filter {
+}
+
+.filter button {
+  padding: 7px 14px;
+  border-radius: 30px;
+  outline: transparent;
+  border: transparent;
+}
+
+.not-active-btn {
+  background: var(--white-color);
+  color: var(--black-color);
+}
+.active-btn {
+  color: var(--white-color);
+  background: #7e847f;
+}
+
+.exercises {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.exercise {
+  position: relative;
+  margin-bottom: 20px;
+  width: 313px;
+  height: 250px;
+  background: linear-gradient(
+      0deg,
+      rgba(16, 16, 16, 0.7) 0%,
+      rgba(16, 16, 16, 0.7) 70%
+    ),
+    lightgray -16.825px 0.844px / 121.36% 108.504% no-repeat;
+  z-index: 99;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.exercise-image {
+  filter: brightness(35%);
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.exercise-image:hover,
+.exercise-image:focus {
+  transform: scale(1.2);
+}
+
+.exercise-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align: center;
+  font-weight: 400;
+}
+.exercise-subtitle {
+  font-weight: 400;
+  color: var(--white-color);
+  font-size: 20px;
+}
+.exercise-filter {
+  font-weight: 400;
+  color: rgba(246, 246, 246, 0.4);
+  font-weight: 400;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.nav-button {
+  outline: transparent;
+  border: transparent;
+  color: rgba(27, 27, 27, 0.4);
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.96px;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.active-nav-button {
+  width: 35px;
+  height: 35px;
+  color: #1b1b1b;
+  border: 1px solid #1b1b1b;
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 360px) {
+}
+
+/* ADAPTIVE ON MOBILES */
+@media screen and (min-width: 360px) and (max-width: 767px) {
+}
+
+/* ADAPTIVE ON TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .exercises-title {
+    font-size: 44px;
+    line-height: 48px; /* 109.091% */
+    letter-spacing: -0.88px;
+    margin-bottom: 32px;
+  }
+  .filters {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .filter button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .exercises {
+    margin-bottom: 32px;
+    gap: 14px;
+  }
+  .exercise {
+    margin-bottom: 0;
+  }
+}
+
+/* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
+@media screen and (min-width: 1440px) {
+  .exercises {
+    gap: 40px 20px;
+    margin-bottom: 32px;
+  }
+  .exercise {
+    margin-bottom: 0;
+  }
+  .exercises-title {
+    font-size: 44px;
+  }
+}
