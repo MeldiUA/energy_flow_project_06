@@ -1,5 +1,16 @@
 @import url('./common.css');
 @import url('./reset.css');
+@import url('./110min.css');
+@import url('./exercises.css');
+@import url('./exercises_card.css');
+@import url('./favourite_exercises.css');
+@import url('./favourite.css');
+@import url('./favourite_home.css');
+@import url('./footer.css');
+@import url('./header.css');
+@import url('./home.css');
+@import url('./quote.css');
+@import url('./footer.css');
 
 :root {
   font-family: DM Sans, sans-serif;
@@ -16,6 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --second-background: #e8e8e8;
   --black-color: #1b1b1b;
   --placeholder-text-color: rgba(27, 27, 27, 0.6);
   --gray-color: rgba(27, 27, 27, 0.5);
