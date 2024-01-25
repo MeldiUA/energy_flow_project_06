@@ -67,3 +67,9 @@ export async function getQuote(){
    
     return response.data; 
 }
+
+export async function postSubscriptions(email){
+    const response = await axios.post('/subscription', { "email": email });
+    //409 error такий email вже підписаний
+    return response.data;
+}
