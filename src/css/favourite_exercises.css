@@ -142,6 +142,7 @@
 
 @media screen and (min-width: 736px) {
   .favourite_exercises .container {
+    min-height: 100vh;
     border-radius: 50px;
   }
   .favourite_exercises .section_title {
@@ -151,7 +152,7 @@
   }
 
   .scrollbar_custom {
-    max-height: 459px;
+    max-height: 100vh;
     overflow-y: auto;
   }
 
