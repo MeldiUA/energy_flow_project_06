@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = "https://energyflow.b.goit.study/api";
 axios.defaults.baseURL = BASE_URL;
 
-async function getExercises (bodypart = "", muscles = "", equipment = "", keyword = "", page, limit){
+export async function getExercises (bodypart = "", muscles = "", equipment = "", keyword = "", page, limit){
 
 
     const response = await axios.get("/exercises", {
