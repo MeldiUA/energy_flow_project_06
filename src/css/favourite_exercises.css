@@ -171,7 +171,7 @@
     background-color: var(--white-color);
   }
 
-  .favourite_exercises .fav_card_set {
+  .favourite_exercises .fav_card_list {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -179,7 +179,7 @@
     row-gap: 20px;
   }
 
-  .favourite_exercises .set_item {
+  .fav_card_list .list_item {
     width: calc((100% - 28px) / 2);
   }
 
@@ -214,12 +214,21 @@
 /* desk */
 
 @media screen and (min-width: 1280px) {
-  .favourite_exercises .fav_card_set {
+  .favourite_exercises .fav_card_list {
     column-gap: 20px;
     row-gap: 28px;
   }
 
-  .favourite_exercises .set_item {
+  .fav_card_list .list_item {
     width: calc((100% - 40px) / 3);
   }
+}
+
+/* DEMO */
+
+.card_overlay_list.demo {
+  max-width: 340px;
+  min-height: 780px;
+  border-radius: 20px;
+  background-color: var(--white-color);
 }
