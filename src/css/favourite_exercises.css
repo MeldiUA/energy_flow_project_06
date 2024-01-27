@@ -23,6 +23,8 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  overflow-y: scroll;
+  height: 150px;
   max-width: 295px;
   padding: 16px;
   margin-left: auto;
@@ -30,6 +32,14 @@
   margin-bottom: 20px;
   background-color: var(--white-color);
   border-radius: 15px;
+}
+
+.favourite_exercises .fav_card {
+  scrollbar-width: none;
+}
+
+.favourite_exercises .fav_card::-webkit-scrollbar {
+  width: 0;
 }
 
 .fav_card .actions_wrapper {
@@ -52,6 +62,7 @@
   font-weight: 500;
   text-transform: uppercase;
   color: var(--white-color);
+  pointer-events: none;
 }
 
 .fav_card .btn {
@@ -92,6 +103,7 @@
 
 .fav_card .exercise_name {
   font-size: 20px;
+  pointer-events: none;
 }
 
 .fav_card .details_list {
@@ -99,6 +111,7 @@
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 6px;
+  pointer-events: none;
 }
 
 .fav_card .detail_wrapper {
@@ -221,6 +234,10 @@
 
   .fav_card_list .list_item {
     width: calc((100% - 40px) / 3);
+  }
+
+  .fav_card_list .fav_card {
+    height: 140px;
   }
 }
 
