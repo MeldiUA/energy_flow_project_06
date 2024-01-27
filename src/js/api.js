@@ -73,3 +73,9 @@ export async function postSubscriptions(email){
     //409 error такий email вже підписаний
     return response.data;
 }
+
+export async function addExerciseRatingById(id, {email, rate, comment}){
+    const response = await axios.patch(`/exercises/${id}/rating`, { "rate": rate, "email": email, "review": comment });
+
+    return response;
+}
