@@ -200,6 +200,7 @@
   margin-top: 20px;
   margin-bottom: 40px;
   display: none;
+  
 }
 
 .input-container {
@@ -238,7 +239,10 @@
   .filter-search-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: start;
+  }
+  .search-form {
+    margin-top: 0;
   }
   .exercises-title {
     font-size: 44px;
@@ -293,6 +297,9 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    }
+    .search-form {
+      margin-top: 0;
     }
   .exercises {
     gap: 40px 20px;
