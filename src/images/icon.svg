@@ -12,6 +12,7 @@
     <symbol id="icon-arrow" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
     </symbol>
+    <symbol id="icon-menu" viewBox="0 0 64 32" fill="none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M56 20.667H8M56 10H8"/></symbol>
     <symbol id="icon-x" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M22.667 9.333 9.334 22.666M9.333 9.333l13.333 13.333"/>
     </symbol>
