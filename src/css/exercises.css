@@ -50,6 +50,7 @@
 
 .no-results-paragraph {
   margin: 0 auto;
+  padding-top: 164px;
   padding-bottom: 320px;
   font-size: 14px;
   text-align: center;
@@ -104,6 +105,7 @@
 
 .nav-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
 }
@@ -194,16 +196,50 @@
   line-height: 18px; /* 150% */
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 360px) {
+.search-form {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: none;
 }
 
-/* ADAPTIVE ON MOBILES */
-@media screen and (min-width: 360px) and (max-width: 767px) {
+.input-container {
+  position: relative;
+  display: inline;
+  
+}
+.input-form {
+  border-radius: 30px;
+  background: #F6F6F6; 
+  border: transparent;
+  outline: transparent;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 12px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+.input-form::placeholder{
+  color: var(--black-color);
+  opacity: 1;
+}
+.search-button {
+  position: absolute;
+  display: inline;
+  background: transparent; 
+  border: transparent;
+  outline: transparent;
+  right: 10px;
+  top: 0;
 }
 
 /* ADAPTIVE ON TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  .filter-search-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  }
   .exercises-title {
     font-size: 44px;
     line-height: 48px; /* 109.091% */
@@ -233,6 +269,8 @@
   }
   .no-results-paragraph {
     width: 536px;
+    padding-bottom: 585px;
+    padding-top: 232px;
   }
 
   .exercise-information {
@@ -251,6 +289,11 @@
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
 @media screen and (min-width: 1440px) {
+  .filter-search-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    }
   .exercises {
     gap: 40px 20px;
     width: 1312px;
@@ -268,6 +311,8 @@
     letter-spacing: -0.48px;
   }
   .no-results-paragraph {
+    padding-top: 217px;
+    padding-bottom: 350px;
     width: 684px;
   }
   .exercise-information {
