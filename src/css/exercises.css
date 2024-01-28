@@ -1,4 +1,4 @@
-.exercises-section {
+.exercises-section .container {
   border-radius: 30px;
   background: var(--second-background);
 }
@@ -9,7 +9,7 @@
   margin-bottom: 20px;
 }
 .exercises-subtitle {
-  color: rgba(27, 27, 27, 0.5);
+  color: var(--gray-color);
   font-size: 20px;
   font-weight: 400;
   line-height: 20px; /* 100% */
@@ -112,7 +112,7 @@
 .nav-button {
   outline: transparent;
   border: transparent;
-  color: rgba(27, 27, 27, 0.4);
+  color: var(--description-color);
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 0.96px;
@@ -123,8 +123,8 @@
 .active-nav-button {
   width: 35px;
   height: 35px;
-  color: #1b1b1b;
-  border: 1px solid #1b1b1b;
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
   border-radius: 50%;
 }
 .exercise-information {
@@ -143,7 +143,7 @@
   margin-top: 25px;
 }
 .tag {
-  color: #f6f6f6;
+  color: var(--white-color);
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
@@ -185,12 +185,12 @@
   align-items: baseline;
 }
 .detail-title {
-  color: rgba(27, 27, 27, 0.4);
+  color: var(--description-color);
   font-size: 12px;
   font-weight: 400;
 }
 .detail-value {
-  color: #1b1b1b;
+  color: var(--black-color);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px; /* 150% */
@@ -209,7 +209,7 @@
 }
 .input-form {
   border-radius: 30px;
-  background: #F6F6F6; 
+  background: var(--white-color); 
   border: transparent;
   outline: transparent;
   font-size: 14px;
