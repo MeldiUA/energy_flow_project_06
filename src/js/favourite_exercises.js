@@ -86,8 +86,6 @@ const uniqueIdFilter = arr => {
     }
     return false;
   });
-
-  console.log(newArray);
   return newArray;
 };
 
@@ -169,19 +167,19 @@ const onClick = e => {
     return;
   }
 
-  if (deleteBtn.dataset.idDelBtn === cardComponent.dataset.idCard) {
-    const idToRemove = Number(deleteBtn.dataset.idDelBtn);
-    removeFromFav(idToRemove);
-    checkStorage();
-  } else return;
+  if (deleteBtn) {
+    if (deleteBtn.dataset.idDelBtn === cardComponent.dataset.idCard) {
+      const idToRemove = Number(deleteBtn.dataset.idDelBtn);
+      removeFromFav(idToRemove);
+      checkStorage();
+    } else return;
+  } else if (startBtn) return console.log('Start logic here');
 };
 
 // check storage logic
 
 const checkStorage = () => {
   const isFavsExist = getFav(LS_FAV) !== null;
-
-  console.log(getFav(LS_FAV).length);
 
   if (
     localStorage.length === 0 ||
@@ -190,6 +188,7 @@ const checkStorage = () => {
   ) {
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');
+    console.log('No Favs');
   } else {
     console.log('Favs there');
     refs.noCards.classList.add('visually-hidden');
