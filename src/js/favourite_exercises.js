@@ -1,3 +1,5 @@
+import handlerStartBtn from './exercises_card.js';
+
 const refs = {
   cardSet: document.querySelector('.fav_card_list'),
   noCards: document.querySelector('.no_cards_wrapper'),
@@ -52,13 +54,13 @@ const fav = [demoObj1, demoObj2, demoObj3, demoObj2_5];
 
 // ls functions
 
-const LS_FAV = 'favourite';
+export const LS_FAV = 'favourite';
 
-const setFav = arr => {
+export const setFav = arr => {
   localStorage.setItem(LS_FAV, JSON.stringify(arr));
 };
 
-const getFav = key => {
+export const getFav = key => {
   try {
     return JSON.parse(localStorage.getItem(key));
   } catch (err) {
@@ -67,7 +69,7 @@ const getFav = key => {
   }
 };
 
-const removeFromFav = id => {
+export const removeFromFav = id => {
   const filteredArr = getFav(LS_FAV).filter(obj => obj.id !== id);
   localStorage.removeItem(LS_FAV);
   localStorage.setItem(LS_FAV, JSON.stringify(filteredArr));
@@ -105,7 +107,7 @@ const renderCards = arr => {
                   </svg>
                 </button>
               </div>
-              <button data-action="start_exercise_btn" class="btn">
+              <button data-id-start-btn="${id}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
                   <use href="../images/icon.svg#icon-arrow"></use>
@@ -173,7 +175,16 @@ const onClick = e => {
       removeFromFav(idToRemove);
       checkStorage();
     } else return;
-  } else if (startBtn) return console.log('Start logic here');
+  } else if (startBtn) {
+    const startId = Number(startBtn.dataset.idStartBtn);
+    const arr = getFav(LS_FAV);
+    const outputObj = arr.find(obj => obj.id === startId);
+    const outputArray = [outputObj, true];
+    console.log(outputArray);
+    return outputArray;
+
+    // output format: array
+  }
 };
 
 // check storage logic
