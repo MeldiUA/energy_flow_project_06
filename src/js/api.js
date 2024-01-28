@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = "https://energyflow.b.goit.study/api";
 axios.defaults.baseURL = BASE_URL;
 
-async function getExercises (bodypart = "", muscles = "", equipment = "", keyword = "", page, limit){
+export async function getExercises (bodypart = "", muscles = "", equipment = "", keyword = "", page, limit){
 
 
     const response = await axios.get("/exercises", {
@@ -66,4 +66,16 @@ export async function getQuote(){
     const response = await axios.get(`/quote`);
    
     return response.data; 
+}
+
+export async function postSubscriptions(email){
+    const response = await axios.post('/subscription', { "email": email });
+    //409 error такий email вже підписаний
+    return response.data;
+}
+
+export async function addExerciseRatingById(id, {email, rate, comment}){
+    const response = await axios.patch(`/exercises/${id}/rating`, { "rate": rate, "email": email, "review": comment });
+
+    return response;
 }
