@@ -1,4 +1,13 @@
 /* !============================ MOBILE ============================ */
+.container {
+  margin-bottom: 20px;
+}
+
+.section {
+  padding: 20px 0 0;
+  margin: 0 auto;
+}
+
 .hero-img-container {
   width: 335px;
   height: 387px;
@@ -63,6 +72,10 @@
 
 /* !============================ TABLET ============================ */
 @media screen and (min-width: 768px) {
+  .container {
+    margin-bottom: 16px;
+  }
+
   .hero-container {
     display: flex;
   }
@@ -73,7 +86,7 @@
     padding: 0 32px 64px 20px;
     background-image: url(../images/tablet/hero.jpg);
     border-radius: 50px 0px 50px 50px;
-    /* margin-bottom: 0; */
+    margin-bottom: 0px;
   }
 
   .hero-list {
