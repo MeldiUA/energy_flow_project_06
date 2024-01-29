@@ -1,4 +1,4 @@
-import handlerStartBtn from './exercises_card.js';
+// import handlerStartBtn from './exercises_card.js';
 
 import {
   getFav,
