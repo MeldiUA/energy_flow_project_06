@@ -1,0 +1,242 @@
+/* mob */
+
+.favourite_exercises.section {
+  background-color: var(--white-color);
+}
+
+.favourite_exercises .container {
+  min-height: 450px;
+  background-color: var(--second-background);
+  border-radius: 30px;
+}
+
+.favourite_exercises .section_title {
+  margin-bottom: 20px;
+  color: var(--black-color);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.favourite_exercises .fav_card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow-y: scroll;
+  height: 150px;
+  max-width: 295px;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: var(--white-color);
+  border-radius: 15px;
+}
+
+.favourite_exercises .fav_card {
+  scrollbar-width: none;
+}
+
+.favourite_exercises .fav_card::-webkit-scrollbar {
+  width: 0;
+}
+
+.fav_card .actions_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fav_card .workout_wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fav_card .workout {
+  padding: 5px 8px;
+  background-color: var(--gray-color);
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--white-color);
+  pointer-events: none;
+}
+
+.fav_card .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  stroke: var(--black-color);
+  padding: 0;
+  background: none;
+  border: 0;
+  height: 16px;
+}
+
+.fav_card .start {
+  color: var(--black-color);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.fav_card .inner_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fav_card .icon_man {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--white-color);
+  background-color: var(--gray-color);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.fav_card .exercise_name {
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.fav_card .details_list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 6px;
+  pointer-events: none;
+}
+
+.fav_card .detail_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fav_card .detail_item {
+  color: var(--description-color);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.fav_card .detail_value {
+  color: var(--black-color);
+}
+
+.favourite_exercises .no_cards_wrapper {
+  padding-top: 60px;
+}
+
+.favourite_exercises .dumbbell_img {
+  height: 52px;
+  margin-bottom: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favourite_exercises .info {
+  font-size: 14px;
+  max-width: 247px;
+  color: var(--black-color);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* tab */
+
+@media screen and (min-width: 736px) {
+  .favourite_exercises .container {
+    min-height: 100vh;
+    border-radius: 50px;
+  }
+  .favourite_exercises .section_title {
+    margin-bottom: 32px;
+    font-size: 44px;
+    line-height: 1.09;
+  }
+
+  .scrollbar_custom {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .scrollbar_custom::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--description-color);
+  }
+
+  .scrollbar_custom::-webkit-scrollbar-thumb {
+    color: var(--black-color);
+    background-color: var(--description-color);
+    border-radius: 10px;
+  }
+
+  .scrollbarcustom::-webkit-scrollbar-track {
+    background-color: var(--white-color);
+  }
+
+  .favourite_exercises .fav_card_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 14px;
+    row-gap: 20px;
+  }
+
+  .fav_card_list .list_item {
+    width: calc((100% - 28px) / 2);
+  }
+
+  .favourite_exercises .fav_card {
+    max-width: 100%;
+  }
+
+  .favourite_exercises .fav_card {
+    margin-bottom: 0;
+  }
+
+  .fav_card .exercise_name {
+    font-size: 24px;
+  }
+
+  .favourite_exercises .no_cards_wrapper {
+    padding-top: 176px;
+  }
+
+  .favourite_exercises .dumbbell_img {
+    width: 115px;
+    height: 71px;
+  }
+
+  .favourite_exercises .info {
+    max-width: 554px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+}
+
+/* desk */
+
+@media screen and (min-width: 1280px) {
+  .favourite_exercises .fav_card_list {
+    column-gap: 20px;
+    row-gap: 28px;
+  }
+
+  .fav_card_list .list_item {
+    width: calc((100% - 40px) / 3);
+  }
+
+  .fav_card_list .fav_card {
+    height: 140px;
+  }
+}
