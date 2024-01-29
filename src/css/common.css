@@ -53,24 +53,24 @@
 }
 
 /* Mobile */
-/* .container {
-  max-width: 335px;
+.container {
+  max-width: 375px;
   margin: 0 auto;
   padding: 40px 20px;
   margin-bottom: 16px;
-} */
-@media (min-width: 375px) {
+}
+/* @media (min-width: 375px) {
   .container {
     width: 375px;
     padding: 0 20px;
     margin: 0 auto;
   }
-}
+} */
 
 /* Tablet */
 /* @media screen and (min-width: 736px) {
   .container {
-    max-width: 736px;
+    max-width: 768px;
     padding: 64px 48px;
   }
 } */
@@ -84,7 +84,7 @@
 /* Desktop */
 /* @media screen and (min-width: 1280px) {
   .container {
-    max-width: 1408px;
+    max-width: 1440px;
   }
 } */
 @media (min-width: 1440px) {
