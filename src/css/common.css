@@ -55,8 +55,8 @@
 /* Mobile */
 .container {
   max-width: 375px;
+  padding: 0 20px;
   margin: 0 auto;
-  padding: 40px 20px;
   margin-bottom: 16px;
 }
 
@@ -64,12 +64,12 @@
 @media screen and (min-width: 736px) {
   .container {
     max-width: 768px;
-    padding: 64px 48px;
+    padding: 0 16px;
   }
 }
 
 /* Desktop */
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1408px) {
   .container {
     max-width: 1440px;
   }
