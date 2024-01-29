@@ -1,5 +1,12 @@
 import handlerStartBtn from './exercises_card.js';
 
+import {
+  getFav,
+  setFav,
+  removeFromFav,
+  LS_FAV,
+} from './localalStorageLogical.js';
+
 const refs = {
   cardSet: document.querySelector('.fav_card_list'),
   noCards: document.querySelector('.no_cards_wrapper'),
@@ -14,7 +21,7 @@ const demoObj1 = {
     bodyPart: 'Waist',
     target: 'Biceps',
   },
-  id: 1,
+  _id: 1,
   favourite: true,
 };
 
@@ -25,7 +32,7 @@ const demoObj2 = {
     bodyPart: 'Cardio',
     target: 'Cardiovascular system',
   },
-  id: 2,
+  _id: 2,
   favourite: false,
 };
 
@@ -36,7 +43,7 @@ const demoObj2_5 = {
     bodyPart: 'Cardio',
     target: 'Cardiovascular system',
   },
-  id: 2,
+  _id: 2,
   favourite: false,
 };
 
@@ -47,33 +54,10 @@ const demoObj3 = {
     bodyPart: 'Tummy',
     target: 'Hunger',
   },
-  id: 3,
+  _id: 3,
 };
 
-const fav = [demoObj1, demoObj2, demoObj3, demoObj2_5];
-
-// ls functions
-
-export const LS_FAV = 'favourite';
-
-export const setFav = arr => {
-  localStorage.setItem(LS_FAV, JSON.stringify(arr));
-};
-
-export const getFav = key => {
-  try {
-    return JSON.parse(localStorage.getItem(key));
-  } catch (err) {
-    console.log(err.message);
-    //   add notification here in future instead of log
-  }
-};
-
-export const removeFromFav = id => {
-  const filteredArr = getFav(LS_FAV).filter(obj => obj.id !== id);
-  localStorage.removeItem(LS_FAV);
-  localStorage.setItem(LS_FAV, JSON.stringify(filteredArr));
-};
+const fav = [demoObj1, demoObj2, demoObj2_5, demoObj3];
 
 setFav(fav);
 
@@ -82,8 +66,8 @@ setFav(fav);
 const uniqueIdFilter = arr => {
   const uniqueIds = new Set();
   const newArray = arr.filter(obj => {
-    if (!uniqueIds.has(obj.id)) {
-      uniqueIds.add(obj.id);
+    if (!uniqueIds.has(obj._id)) {
+      uniqueIds.add(obj._id);
       return true;
     }
     return false;
@@ -95,19 +79,19 @@ const renderCards = arr => {
   const uniqueIdOnlyArray = uniqueIdFilter(arr);
 
   const markup = uniqueIdOnlyArray.map(
-    ({ name, id, excDetails: { burnedCalories, bodyPart, target } }) => {
-      return `<li data-id-card="${id}" data-component="fav_card" class="list_item">
+    ({ name, _id, excDetails: { burnedCalories, bodyPart, target } }) => {
+      return `<li data-id-card="${_id}" data-component="fav_card" class="list_item">
           <div class="fav_card">
             <div class="actions_wrapper">
               <div class="workout_wrapper">
                 <span class="workout">workout</span>
-                <button data-id-del-btn="${id}" data-action="delete_fav_card" class="btn">
+                <button data-id-del-btn="${_id}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
                     <use href="../images/icon.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
-              <button data-id-start-btn="${id}" data-action="start_exercise_btn" class="btn">
+              <button data-id-start-btn="${_id}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
                   <use href="../images/icon.svg#icon-arrow"></use>
@@ -158,7 +142,7 @@ const renderCards = arr => {
   refs.cardSet.innerHTML = markup.join('');
 };
 
-// delete card logic
+// delete and start card logic
 
 const onClick = e => {
   const startBtn = e.target.closest('[data-action="start_exercise_btn"]');
@@ -178,12 +162,8 @@ const onClick = e => {
   } else if (startBtn) {
     const startId = Number(startBtn.dataset.idStartBtn);
     const arr = getFav(LS_FAV);
-    const outputObj = arr.find(obj => obj.id === startId);
-    const outputArray = [outputObj, true];
-    console.log(outputArray);
-    return outputArray;
-
-    // output format: array
+    const outputObj = arr.find(obj => obj._id === startId);
+    handlerStartBtn(outputObj, true);
   }
 };
 
@@ -192,6 +172,10 @@ const onClick = e => {
 const checkStorage = () => {
   const isFavsExist = getFav(LS_FAV) !== null;
 
+  if (getFav(LS_FAV).some(obj => obj === null)) {
+    const arr = getFav(LS_FAV).filter(obj => obj !== null);
+    setFav(arr);
+  }
   if (
     localStorage.length === 0 ||
     !isFavsExist ||
