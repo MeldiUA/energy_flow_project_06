@@ -111,6 +111,7 @@
     font-weight: 400;
     line-height: 0.97;
     letter-spacing: -0.02em;
+    user-select: none;
   }
 
   .hero-text {

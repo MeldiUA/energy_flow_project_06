@@ -44,7 +44,7 @@
 //   }
 // }
 
-//============================ BURGER MENU WORK ============================
+//============================ BURGER-MENU-WORK ============================
 
 const openMenuButton = document.querySelector('.open-mobile-menu-btn');
 const closeMenuButton = document.querySelector('.close-mobile-menu-btn');
@@ -57,7 +57,7 @@ openMenuButton.addEventListener('click', function () {
 closeMenuButton.addEventListener('click', function () {
   mobileMenu.classList.remove('is-open');
 });
-//=========================== /BURGER MENU WORK ============================
+//=========================== /BURGER-MENU-WORK ============================
 
 
 // document.getElementById('backToTop').addEventListener('click', function () {

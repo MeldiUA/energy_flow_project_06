@@ -21,6 +21,7 @@
   font-weight: 700;
   line-height: 1.13;
   letter-spacing: -0.02em;
+  user-select: none;
 }
 
 .nav-list,
@@ -138,14 +139,29 @@
   border-radius: 10px;
   border: 1px solid rgba(246, 246, 246, 0.2);
 }
-/* ?========================== /MOBILE-MENU ========================== */
 
+.social-media-link:hover,
+.social-media-link:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  stroke: #fff;
+  fill: #fff;
+}
+
+.mobile-menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+/* ?========================== /MOBILE-MENU ========================== */
 /* !============================ /MOBILE ============================ */
 
 /* !============================ TABLET ============================ */
 @media screen and (min-width: 768px) {
   .header-row {
     padding: 0 48px;
+    justify-content: left;
   }
 
   .logo {
@@ -164,6 +180,14 @@
     border-radius: 60px;
     color: #fff;
     background-color: #7e847f;
+    user-select: none;
+    margin-left: 81px;
+    margin-right: 18px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
   }
 
   .social-media-list {
@@ -194,6 +218,11 @@
 @media screen and (min-width: 1440px) {
   .header-row {
     padding: 0 64px;
+  }
+
+  .nav-list {
+    margin-right: 282px;
+    margin-left: 397px;
   }
 }
 /* !============================ /DESCTOP ============================ */

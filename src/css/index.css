@@ -13,6 +13,7 @@
 @import url('./footer.css');
 @import url('./ourTeam.css');
 @import url('./modalOurTeam.css');
+@import url('./change-theme.css');
 
 :root {
   font-family: DM Sans, sans-serif;
