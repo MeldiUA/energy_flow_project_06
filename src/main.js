@@ -8,7 +8,7 @@ import * as header from './js/header';
 import * as home from './js/home';
 import * as localalStorageLogical from './js/localalStorageLogical';
 import * as qoute from './js/quote';
-import * as qoute from './js/rate';
+import * as rate from './js/rate';
 import * as ourTeam from './js/ourTeam';
 import * as modalOurTeam from './js/modalOurTeam';
 
