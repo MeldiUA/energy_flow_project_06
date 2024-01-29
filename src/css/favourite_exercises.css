@@ -240,12 +240,3 @@
     height: 140px;
   }
 }
-
-/* DEMO */
-
-.card_overlay_list.demo {
-  max-width: 340px;
-  min-height: 780px;
-  border-radius: 20px;
-  background-color: var(--white-color);
-}
