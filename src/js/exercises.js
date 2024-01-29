@@ -174,66 +174,53 @@ async function makeExercisesCards(response) {
   localResponse = response;
   const markup = response
     .sort((a, b) => a.name > b.name)
-    .map(({ name, _id, rating, burnedCalories, bodyPart, target }) => {
+    .map(({ name, _id, rating, burnedCalories, bodyPart, target,time }) => {
       if (rating % 1 === 0) {
         rating = rating + '.0';
       }
-      return `<li data-id-card="${_id}" data-component="fav_card" class="list_item">
-            <div class="fav_card">
-              <div class="actions_wrapper">
-                <div class="workout_wrapper">
-                  <span class="workout">workout</span>
-                    <span>${rating}
-                      <svg fill="#EEA10C" width="18" height="18" aria-label="star icon">
-                        <use href="../images/icon.svg#icon-star"></use>
-                      </svg>
-                    </span>
-                </div>
-                <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="btn">
-                  <span class="start">Start</span>
-                  <svg stroke="#1B1B1B" width="16" height="16" aria-label="arrow icon">
-                    <use href="../images/icon.svg#icon-arrow"></use>
-                  </svg>
-                </button>
-              </div>
-  
-              <div class="inner_wrapper">
-                <div class="icon_man">
-                  <svg width="16" height="16">
-                    <use href="../images/icon.svg#icon-man"></use>
-                  </svg>
-                </div>
-                <p class="exercise_name">${name}</p>
-              </div>
-  
-              <div class="details_wrapper">
-                <ul class="details_list">
-                  <li>
-                    <div class="detail_wrapper">
-                      <p class="detail_item">
-                        Burned calories:
-                        <span class="detail_value">${burnedCalories} / 3 min</span>
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="detail_wrapper">
-                      <p class="detail_item">
-                        Body part: <span class="detail_value">${bodyPart}</span>
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="detail_wrapper">
-                      <p class="detail_item">
-                        Target: <span class="detail_value">${target}</span>
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>`;
+     return `<li class="exercise-information" data-id-card="${_id}">
+      <div>
+          <p class="tag">Workout</p>
+          <span class="rating">
+              ${rating}
+              <svg fill="#EEA10C" width="18" height="18">
+                  <use href="../images/icon.svg#icon-star"></use>
+              </svg>
+          </span>
+          <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
+          Start
+              <svg stroke="#1B1B1B"  width="14" height="14">
+                  <use href="../images/icon.svg#icon-arrow"></use>
+              </svg>
+          </button>
+      </div>
+      <div>
+        <div class="icon-man-wrap">
+          <svg class="icon-man" fill="white" width="15" height="15">
+          <use href="../images/icon.svg#icon-man"></use>
+          </svg>
+        </div>
+        <h2 class="exercise-name">${name[0].toUpperCase() + name.slice(1)}</h2>
+      </div>
+      <ul class="exercise-details">
+          <li class="exercise-detail">
+              <h3 class="detail-title">Burned calories: </h3>
+              <p class="detail-value">${burnedCalories} / ${time} min</p>
+          </li>
+          <li class="exercise-detail">
+              <h3 class="detail-title">Body part: </h3>
+              <p class="detail-value">${
+                bodyPart[0].toUpperCase() + bodyPart.slice(1)
+              }</p>
+          </li>
+          <li class="exercise-detail">
+              <h3 class="detail-title">Target: </h3>
+              <p class="detail-value">${
+                target[0].toUpperCase() + target.slice(1)
+              }</p>
+          </li>
+      </ul>
+  </li>`;
     })
     .join('');
 
@@ -242,7 +229,6 @@ async function makeExercisesCards(response) {
 
 // refs.exercises.addEventListener('click', event => {
 //   const startBtn = event.target.closest('[data-action="start_exercise_btn"]');
-//   const cardComponent = event.target.closest('[data-component="fav_card"]');
 
 //   if (!event.target.tagName === 'BUTTON' || (!startBtn)) {
 //     return;
