@@ -5,7 +5,7 @@ const refs = {
   exercises: document.querySelector('.exercises'),
   navButtons: document.querySelector('.nav-buttons'),
   musclesBtn: document.querySelector('.muscles-btn'),
-  execisesTitle: document.querySelector('.exercises-title')
+  execisesTitle: document.querySelector('.exercises-title'),
 };
 
 let page = 1;
@@ -34,8 +34,8 @@ async function fetchFilter() {
 }
 
 async function pressBtn(event) {
-refs.exercises.addEventListener('click', loadExercises);
-refs.execisesTitle.innerHTML = `Exercises`;
+  refs.exercises.addEventListener('click', loadExercises);
+  refs.execisesTitle.innerHTML = `Exercises`;
   if (event.target.tagName !== 'BUTTON') {
     return;
   }
@@ -96,7 +96,6 @@ refs.navButtons.addEventListener('click', async event => {
   makeCards(response.results);
 });
 
-
 async function loadExercises(event) {
   let filter = '';
   let name = '';
@@ -105,14 +104,16 @@ async function loadExercises(event) {
 
   if (tag.tagName === 'IMG') {
     tag = tag.nextElementSibling;
-  } 
+  }
   if (tag.tagName === 'LI' || tag.tagName === 'P' || tag.tagName === 'H1') {
     tag = tag.offsetParent;
-  } 
+  }
 
   filter = tag.lastElementChild.innerHTML;
   name = tag.firstElementChild.innerHTML.toLowerCase();
-  refs.execisesTitle.innerHTML = `Exercises / <span class="exercises-subtitle">${name[0].toUpperCase() + name.slice(1)}</span>`
+  refs.execisesTitle.innerHTML = `Exercises / <span class="exercises-subtitle">${
+    name[0].toUpperCase() + name.slice(1)
+  }</span>`;
   let resp = '';
   switch (filter) {
     case 'Muscles':
@@ -129,19 +130,17 @@ async function loadExercises(event) {
         'beforeend',
         `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`
       );
-
-    }
-        if (resp.results === undefined || resp.results.length === 0) {
-      console.log(resp)
-      refs.exercises.innerHTML = 
-        `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
-      return;
-    }
-    refs.exercises.removeEventListener('click', loadExercises);
+  }
+  if (resp.results === undefined || resp.results.length === 0) {
+    console.log(resp);
+    refs.exercises.innerHTML = `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+    return;
+  }
+  refs.exercises.removeEventListener('click', loadExercises);
 
   makeExercisesCards(resp.results);
- refs.navButtons.innerHTML = '';
-} 
+  refs.navButtons.innerHTML = '';
+}
 
 async function makeExercisesCards(response) {
   refs.exercises.innerHTML = '';
