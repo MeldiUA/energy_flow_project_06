@@ -1,0 +1,177 @@
+/* !============================ MOBILE ============================ */
+.section {
+  padding: 20px 0 0;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.hero-img-container {
+  width: 335px;
+  height: 387px;
+  display: flex;
+  align-items: end;
+  padding: 0 0 20px 10px;
+  background-color: #e8e8e8;
+  border-radius: 30px;
+  background: #e8e8e8 url(../images/hero-img/mobile-hero.jpg) no-repeat
+    center/cover;
+  margin-bottom: 20px;
+}
+
+.hero-list {
+  width: 141px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.hero-list-item {
+  padding: 4px 10px;
+  border-radius: 30px;
+  border: 1px solid rgba(246, 246, 246, 0.3);
+  /* background: rgba(255, 255, 255, 0.19);
+  backdrop-filter: blur(1.3px); */
+  color: var(--white-color);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.hero-text-container {
+  background-color: #fff;
+  border-radius: 30px;
+  width: 335px;
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  padding: 0 20px 81px 20px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 0.89;
+  letter-spacing: -0.02em;
+}
+
+.hero-title span {
+  color: #7e847f;
+  font-style: italic;
+}
+
+.hero-text {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+}
+/* !============================ /MOBILE ============================ */
+
+/* !============================ TABLET ============================ */
+@media screen and (min-width: 768px) {
+  .section {
+    margin-bottom: 16px;
+    padding: 16px 0 0;
+  }
+
+  .hero-container {
+    display: flex;
+  }
+
+  .hero-img-container {
+    width: 248px;
+    height: 900px;
+    padding: 0 32px 64px 20px;
+    background-image: url(../images/hero-img/tablet-hero.jpg);
+    border-radius: 50px 0px 50px 50px;
+    margin-bottom: 0px;
+  }
+
+  .hero-list {
+    width: 196px;
+    gap: 8px;
+  }
+
+  .hero-list-item {
+    font-size: 16px;
+    padding: 4px 15px;
+    line-height: 24px;
+  }
+
+  .hero-text-container {
+    padding: 0 32px 192px 32px;
+    border-radius: 0px 50px 50px 50px;
+    width: 488px;
+    height: 900px;
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 98px;
+    font-weight: 400;
+    line-height: 0.97;
+    letter-spacing: -0.02em;
+    user-select: none;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+  }
+}
+/* !============================ /TABLET ============================ */
+
+/* !============================ DESCTOP ============================ */
+@media screen and (min-width: 1440px) {
+  .hero-img-container,
+  .hero-text-container {
+    width: 704px;
+    height: 884px;
+  }
+
+  .hero-img-container {
+    background-image: url(../images/hero-img/desktop-hero.jpg);
+    padding: 0 460px 32px 48px;
+  }
+
+  .hero-text-container {
+    padding: 0 33px 241px 32px;
+  }
+
+  .hero-title {
+    font-size: 120px;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+  }
+}
+/* !============================ /DESCTOP ============================ */
+
+/* *========================== IMEGES 2 DPR ========================== */
+/* mobile 375*/
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px),
+  screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .hero-img-container {
+    background-image: url(../images/hero-img/mobile-hero@2.jpg);
+  }
+}
+
+/* tablet 768*/
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .hero-img-container {
+    background-image: url(../images/hero-img/tablet-hero@2.jpg);
+  }
+}
+
+/* desktop 1440*/
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  screen and (min-resolution: 2dppx) and (min-width: 1440px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+  .hero-img-container {
+    background-image: url(../images/hero-img/desktop-hero@2.jpg);
+  }
+}
+/* *========================= /IMEGES 2 DPR ========================== */
