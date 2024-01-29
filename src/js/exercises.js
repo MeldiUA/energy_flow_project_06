@@ -9,6 +9,8 @@ const refs = {
   musclesBtn: document.querySelector('.muscles-btn'),
   exercisesTitle: document.querySelector('.exercises-title'),
   searchForm: document.querySelector('.search-form'),
+  navForm: document.querySelector('.nav-form'),
+  navSum: document.querySelector('.nav-sum'),
 };
 
 let page = 1;
@@ -18,6 +20,7 @@ let keyWord = '';
 let filter = '';
 let name = '';
 let localResponse = null;
+let activeIndex = 1;
 
 fetchFilter();
 refs.musclesBtn.classList.add('active-btn');
@@ -51,6 +54,8 @@ async function pressBtn(event) {
   }
   page = 1;
   refs.exercises.innerHTML = '';
+  refs.navForm.innerHTML = '';
+  updateList();
 
   const activeBtn = document.querySelector('.active-btn');
   if (activeBtn) {
@@ -95,18 +100,58 @@ async function makeNavs(totalPages) {
     markup += `<li><button class="nav-button" type="button">${i}</button></li>`;
   }
   refs.navButtons.insertAdjacentHTML('beforeend', markup);
+
+  const listItems = document.getElementById('list').getElementsByTagName('li');
+  const listItemslength = listItems.length;
+
+  // if (listItemslength > 5) {
+  //   const navInput = `<p>...${listItemslength}</p>`;
+  //   refs.navSum.insertAdjacentHTML('beforeend', navInput);
+  // } 
+
+  if (listItemslength >= 10) {
+    const navInput = `<input type="number" name="searchIndex"><button id="nav-form-button" type="submit">press</button>`;
+    refs.navForm.insertAdjacentHTML('beforeend', navInput);
+  } 
+
+  updateList();
 }
 
-refs.navButtons.addEventListener('click', async event => {
-  if (event.target.tagName !== 'BUTTON') {
-    return;
+
+
+function updateList() {
+  var listItems = document.querySelectorAll('#list li');
+  for (var i = 0; i < listItems.length; i++) {
+    var paragraph = listItems[i].querySelector('p');
+    if (listItems[i] && paragraph) {
+      listItems[i].removeChild(paragraph);
+    }
   }
-  const activeBtn = document.querySelector('.active-nav-button');
-  if (activeBtn) {
-    activeBtn.classList.remove('active-nav-button');
+
+  for (var i = 0; i < listItems.length; i++) {
+    var isInRange = i >= activeIndex - 3 && i <= activeIndex + 1;
+    var isFirstOrLast = i === 0 || i === listItems.length - 1;
+
+    if (isFirstOrLast && !isInRange) {
+      listItems[i].classList.remove('visually-hidden');
+      listItems[i].insertAdjacentHTML('afterbegin', '<p>...</p>');
+    } else if (!isInRange) {
+      listItems[i].classList.add('visually-hidden');
+      var paragraph = listItems[i].querySelector('p');
+      if (paragraph) {
+        listItems[i].removeChild(paragraph);
+      }
+    } else {
+      listItems[i].classList.remove('visually-hidden');
+      var paragraph = listItems[i].querySelector('p');
+      if (paragraph) {
+        listItems[i].removeChild(paragraph);
+      }
+    }
   }
-  event.target.classList.add('active-nav-button');
-  page = Number(event.target.innerHTML);
+}
+async function buttonClickFunction() {
+  updateList();
   if (keyWord !== '') {
     const response = await loadNextPageByKeyWord();
     makeExercisesCards(response.results);
@@ -119,7 +164,42 @@ refs.navButtons.addEventListener('click', async event => {
   }
   const response = await api.getFilter(searchQuery, page, limit);
   makeCards(response.results);
+}
+
+refs.navButtons.addEventListener('click', async event => {
+  if (event.target.tagName !== 'BUTTON') {
+    return;
+  }
+  const activeBtn = document.querySelector('.active-nav-button');
+  if (activeBtn) {
+    activeBtn.classList.remove('active-nav-button');
+  }
+  event.target.classList.add('active-nav-button');
+  page = Number(event.target.innerHTML);
+  activeIndex = page;
+  buttonClickFunction();
 });
+
+
+
+refs.navForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const listItems = document.getElementById('list').getElementsByTagName('li');
+  const navIndex = event.target.searchIndex.value.trim();
+  event.target.reset();
+  const activeBtn = document.querySelector('.active-nav-button');
+  if (activeBtn) {
+    activeBtn.classList.remove('active-nav-button');
+  }
+
+  const liButtonNavIndex = listItems[navIndex - 1].getElementsByTagName('button');
+  liButtonNavIndex[0].classList.add('active-nav-button');
+  page = navIndex;
+  activeIndex = Number(page);
+  buttonClickFunction();
+});
+
+
 
 async function loadExercises(event) {
   refs.searchForm.style.display = 'block';
@@ -256,6 +336,9 @@ async function makeExercisesCards(response) {
 // });
 
 refs.searchForm.addEventListener('submit', async event => {
+  refs.navForm.innerHTML = '';
+  activeIndex = 1;
+  updateList();
   event.preventDefault();
   keyWord = event.target.searchQuery.value.trim();
   event.target.reset();
@@ -283,7 +366,7 @@ async function loadNextPageByKeyWord() {
         limit
       );
     case 'Body parts':
-      return  await api.getExercises(
+      return await api.getExercises(
         name,
         undefined,
         undefined,
@@ -304,3 +387,46 @@ async function loadNextPageByKeyWord() {
       refs.exercises.innerHTML = `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
   }
 }
+
+// ------------------------------------------------
+
+// const list = document.getElementById('list');
+// const items = Array.from(list.getElementsByTagName('li'));
+// const itemsPerPage = 5; // Кількість елементів на одній сторінці
+
+// function displayList(items, startIndex, endIndex) {
+//   list.innerHTML = '';
+//   for (let i = startIndex; i < endIndex && i < items.length; i++) {
+//     list.appendChild(items[i]);
+//   }
+// }
+
+// function setupPagination(items) {
+//   const pageCount = Math.ceil(items.length / itemsPerPage);
+//   const pagination = document.getElementById('pagination');
+//   pagination.innerHTML = '';
+
+//   for (let i = 1; i <= pageCount; i++) {
+//     const li = document.createElement('li');
+//     li.innerText = i;
+
+//     navButtons.addEventListener('click', function () {
+//       const currentPage = parseInt(this.innerText);
+//       const startIndex = (currentPage - 1) * itemsPerPage;
+//       const endIndex = startIndex + itemsPerPage;
+//       displayList(items, startIndex, endIndex);
+
+//       const paginationItems = pagination.getElementsByTagName('li');
+//       for (let j = 0; j < paginationItems.length; j++) {
+//         paginationItems[j].classList.remove('active');
+//       }
+//       this.classList.add('active');
+//     });
+
+//     pagination.appendChild(li);
+//   }
+// }
+
+// // Початкове відображення списку і пагінації
+// displayList(items, 0, itemsPerPage);
+// setupPagination(items);
