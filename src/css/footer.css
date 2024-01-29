@@ -6,7 +6,7 @@
   padding: 40px 20px 20px;
   box-sizing: border-box;
   border-radius: 30px;
-  background-image: url(../images/footer/footer-background-mobile.jpg);
+  background-image: url('../images/footer/footer-background.jpg');
   background-size: cover;
   background-position-x: center;
 }
@@ -174,7 +174,7 @@
     min-width: 736px;
     height: 576px;
     padding: 64px 48px 32px;
-    background-image: url(../images/footer/footer-background-tablet.jpg);
+    background-image: url("../images/footer/footer-background-tablet.jpg");
     background-size: cover;
     background-position-y: center;
     border-radius: 50px;
@@ -257,7 +257,7 @@
     width: auto;
     height: 454px;
     padding: 64px 48px 26px;
-    background-image: url(../images/footer/footer-background-desktop.jpg);
+    background-image: url("../images/footer/footer-background-desktop.jpg");
   }
 
   .footer-slogan {
@@ -299,5 +299,21 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.28px;
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .footer-container {
+    background-image: url('../images/footer/footer-background@2.jpg');
+  }
+  @media screen and (min-width: 736px) {
+    .footer-container {
+      background-image: url('../images/footer/footer-background-tablet@2.jpg');
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .footer-container {
+      background-image: url('../images/footer/footer-background-desktop@2.jpg');
+    }
   }
 }
