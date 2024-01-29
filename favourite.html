@@ -6,14 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Favourite</title>
-    <script type="module" crossorigin src="/energy_flow_project_06/assets/index-a113d326.js"></script>
-    <link rel="stylesheet" href="/energy_flow_project_06/assets/index-55e90054.css">
+    <script type="module" crossorigin src="/energy_flow_project_06/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/index-19015d35.js">
+    <link rel="stylesheet" href="/energy_flow_project_06/assets/index-89eaa468.css">
   </head>
   <body>
     <header class="header"></header>
 
     
-    
+    <section class="favourite_exercises section">
+  <div class="container">
+    <h2 class="section_title">Favourite</h2>
+    <div class="scrollbar_custom">
+      <ul class="fav_card_list"></ul>
+    </div>
+    <div class="no_cards_wrapper visually-hidden">
+      <img
+        load="lazy"
+        class="dumbbell_img"
+        srcset="
+          ../images/favourite-exercises/dumbbell_mob.png     85w,
+          ../images/favourite-exercises/dumbbell_mob@2x.png 170w,
+          ../images/favourite-exercises/dumbbell_tab.png    116w,
+          ../images/favourite-exercises/dumbbell_tab@2x.png 231w
+        "
+        sizes="(min-width: 736px) 116px, 85px"
+        src="../images/favourite-exercises/dumbbell_mob.png"
+        alt="dumbbell icon"
+        width="80"
+        height="52"
+      />
+      <p class="info">
+        It appears that you haven't added any exercises to your favorites yet.
+        To get started, you can add exercises that you like to your favorites
+        for easier access in the future.
+      </p>
+    </div>
+  </div>
+</section>
+
     
     
 
