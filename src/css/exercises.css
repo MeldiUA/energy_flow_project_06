@@ -1,6 +1,8 @@
 .exercises-section .container {
   border-radius: 30px;
   background: var(--second-background);
+  padding: 40px 20px;
+  margin: 20px auto;
 }
 .exercises-title {
   font-weight: 400;
@@ -41,10 +43,7 @@
 
 .exercises {
   gap: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 313px;
+  width: 100%;
   margin-bottom: 32px;
 }
 
@@ -62,8 +61,9 @@
 
 .exercise {
   position: relative;
-  width: 313px;
-  height: 250px;
+  margin-bottom: 20px;
+  max-width: 295px;
+  max-height: 232px;
   background: linear-gradient(
       0deg,
       rgba(16, 16, 16, 0.7) 0%,
@@ -73,15 +73,15 @@
   border-radius: 12px;
   overflow: hidden;
 }
-
+.exercise:hover,
+.exercise:focus {
+  .exercise-image {
+    transform: scale(1.2);
+  }
+}
 .exercise-image {
   filter: brightness(35%);
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.exercise-image:hover,
-.exercise-image:focus {
-  transform: scale(1.2);
 }
 
 .exercise-info {
@@ -106,12 +106,14 @@
 .nav-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 2px;
   justify-content: center;
+  font-family: 'DM Sans', sans-serif;
 }
 .nav-button {
-  outline: transparent;
   border: transparent;
+  outline: transparent;
   color: var(--description-color);
   font-size: 24px;
   line-height: 32px;
@@ -120,20 +122,42 @@
   font-family: inherit;
 }
 
-.active-nav-button {
-  width: 35px;
-  height: 35px;
+.paginationjs
+  .paginationjs-pages
+  .nav-buttons
+  .paginationjs-page.active-nav-button
+  > a {
   color: var(--black-color);
-  border: 1px solid var(--black-color);
+  margin: 3px 2px;
+}
+
+.paginationjs .paginationjs-pages .nav-buttons > li.paginationjs-next {
+  border: transparent;
+}
+.paginationjs .paginationjs-pages > ul li {
+  border: transparent;
+  background-color: transparent;
+}
+
+.paginationjs .paginationjs-pages > ul li > a {
+  background-color: transparent;
+  color: rgba(27, 27, 27, 0.4);
+  font-size: 20px;
+}
+.paginationjs .paginationjs-pages > ul li > a:hover {
+  background-color: transparent;
+}
+.paginationjs .paginationjs-pages li.active-nav-button {
   border-radius: 50%;
+  border: 1px solid var(--black-color);
 }
 .exercise-information {
-  box-sizing: border-box;
   background: #fff;
   border-radius: 15px;
   padding: 16px;
-  width: 295px;
+  width: 100%;
   flex-shrink: 0;
+  margin-bottom: 20px;
 }
 .exercise-information div {
   display: flex;
@@ -157,7 +181,13 @@
   gap: 2px;
 }
 .details-link {
+  display: flex;
+  gap: 8px;
   margin-left: auto;
+  border: transparent;
+  outline: transparent;
+  background-color: transparent;
+  align-items: center;
 }
 .icon-man-wrap {
   margin-right: 16px;
@@ -200,17 +230,15 @@
   margin-top: 20px;
   margin-bottom: 40px;
   display: none;
-  
 }
 
 .input-container {
   position: relative;
   display: inline;
-  
 }
 .input-form {
   border-radius: 30px;
-  background: var(--white-color); 
+  background: var(--white-color);
   border: transparent;
   outline: transparent;
   font-size: 14px;
@@ -218,16 +246,15 @@
   padding: 12px 14px;
   width: 100%;
   box-sizing: border-box;
-  
 }
-.input-form::placeholder{
+.input-form::placeholder {
   color: var(--black-color);
   opacity: 1;
 }
 .search-button {
   position: absolute;
   display: inline;
-  background: transparent; 
+  background: transparent;
   border: transparent;
   outline: transparent;
   right: 10px;
@@ -235,11 +262,14 @@
 }
 
 /* ADAPTIVE ON TABLETS */
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media screen and (min-width: 736px) {
+  .exercises-section .container {
+    padding: 64px 48px;
+  }
   .filter-search-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
   }
   .search-form {
     margin-top: 0;
@@ -265,11 +295,17 @@
     font-size: 16px;
   }
   .exercises {
+    display: flex;
+    flex-wrap: wrap;
     gap: 14px;
     width: 640px;
+    margin: 0 auto;
+    margin-bottom: 32px;
   }
   .exercise {
     margin-bottom: 0;
+    max-width: 313px;
+    max-height: 250px;
   }
   .no-results-paragraph {
     width: 536px;
@@ -292,22 +328,24 @@
 }
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1280px) {
+  .exercises-section .container {
+    padding: 64px 48px;
+  }
   .filter-search-wrap {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    }
-    .search-form {
-      margin-top: 0;
-    }
+  }
+  .search-form {
+    margin-top: 0;
+  }
   .exercises {
     gap: 40px 20px;
     width: 1312px;
-    margin-bottom: 32px;
   }
   .exercise {
-    margin-bottom: 0;
+    max-width: ;
   }
   .exercises-title {
     font-size: 44px;
