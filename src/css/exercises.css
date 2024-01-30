@@ -41,12 +41,6 @@
   background: #7e847f;
 }
 
-.exercises {
-  gap: 20px;
-  width: 100%;
-  margin-bottom: 32px;
-}
-
 .no-results-paragraph {
   margin: 0 auto;
   padding-top: 164px;
@@ -58,8 +52,13 @@
   color: #7e847f;
   font-weight: 500;
 }
-
+.exercises {
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 32px;
+}
 .exercise {
+  margin: 0 auto;
   position: relative;
   margin-bottom: 20px;
   max-width: 295px;
@@ -300,7 +299,6 @@
     gap: 14px;
     width: 640px;
     margin: 0 auto;
-    margin-bottom: 32px;
   }
   .exercise {
     margin-bottom: 0;
@@ -314,6 +312,7 @@
   }
 
   .exercise-information {
+    margin-bottom: 0;
     width: 313px;
   }
   .tag {
@@ -328,7 +327,7 @@
 }
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1408px) {
   .exercises-section .container {
     padding: 64px 48px;
   }
@@ -345,7 +344,9 @@
     width: 1312px;
   }
   .exercise {
-    max-width: ;
+    margin-bottom: 0;
+    max-width: 313px;
+    max-height: 250px;
   }
   .exercises-title {
     font-size: 44px;
