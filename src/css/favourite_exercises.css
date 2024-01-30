@@ -106,6 +106,10 @@
   pointer-events: none;
 }
 
+.fav_card .exercise_name::first-letter {
+  text-transform: uppercase;
+}
+
 .fav_card .details_list {
   display: flex;
   flex-wrap: wrap;
