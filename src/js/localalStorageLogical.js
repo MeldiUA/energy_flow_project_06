@@ -14,7 +14,7 @@ export const getFav = key => {
 };
 
 export const removeFromFav = id => {
-  const filteredArr = getFav(LS_FAV).filter(obj => obj._id !== id);
+  const filteredArr = getFav(LS_FAV).filter(key => key !== id);
   localStorage.removeItem(LS_FAV);
   localStorage.setItem(LS_FAV, JSON.stringify(filteredArr));
 };

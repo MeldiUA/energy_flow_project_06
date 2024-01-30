@@ -1,5 +1,6 @@
 // import handlerStartBtn from './exercises_card.js';
-
+import axios from 'axios';
+import * as api from './api.js';
 import {
   getFav,
   setFav,
@@ -12,56 +13,21 @@ const refs = {
   noCards: document.querySelector('.no_cards_wrapper'),
 };
 
+if (refs.noCards.classList.contains('visually-hidden')) {
+  refs.noCards.classList.remove('visually-hidden');
+}
+
 // emulation
 
-const demoObj1 = {
-  name: 'Air bike',
-  excDetails: {
-    burnedCalories: 13,
-    bodyPart: 'Waist',
-    target: 'Biceps',
-  },
-  _id: 1,
-  favourite: true,
-};
+// const fav = [
+//   '64f389465ae26083f39b18a1',
+//   '64f389465ae26083f39b17a2',
+//   '64f389465ae26083f39b17a5',
+// ];
 
-const demoObj2 = {
-  name: 'Stationary bike walk',
-  excDetails: {
-    burnedCalories: 116,
-    bodyPart: 'Cardio',
-    target: 'Cardiovascular system',
-  },
-  _id: 2,
-  favourite: false,
-};
+// setFav(fav);
 
-const demoObj2_5 = {
-  name: 'Stationary bike walk',
-  excDetails: {
-    burnedCalories: 116,
-    bodyPart: 'Cardio',
-    target: 'Cardiovascular system',
-  },
-  _id: 2,
-  favourite: false,
-};
-
-const demoObj3 = {
-  name: 'mcChicken burger',
-  excDetails: {
-    burnedCalories: -150,
-    bodyPart: 'Tummy',
-    target: 'Hunger',
-  },
-  _id: 3,
-};
-
-const fav = [demoObj1, demoObj2, demoObj2_5, demoObj3];
-
-setFav(fav);
-
-// render logic
+//fetch and render logic
 
 const uniqueIdFilter = arr => {
   const uniqueIds = new Set();
@@ -79,7 +45,7 @@ const renderCards = arr => {
   const uniqueIdOnlyArray = uniqueIdFilter(arr);
 
   const markup = uniqueIdOnlyArray.map(
-    ({ name, _id, excDetails: { burnedCalories, bodyPart, target } }) => {
+    ({ name, _id, burnedCalories, bodyPart, target }) => {
       return `<li data-id-card="${_id}" data-component="fav_card" class="list_item">
           <div class="fav_card">
             <div class="actions_wrapper">
@@ -142,9 +108,28 @@ const renderCards = arr => {
   refs.cardSet.innerHTML = markup.join('');
 };
 
+const fetchAndRenderFav = async (idsArr, toRender = true) => {
+  try {
+    const favsArr = await Promise.all(
+      idsArr.map(async id => {
+        const response = await api.getExerciseById(id);
+        return response;
+      })
+    );
+    if (toRender === true) {
+      renderCards(favsArr);
+    } else {
+      return favsArr;
+    }
+  } catch (err) {
+    console.error(err.message);
+    // add a notification here in future instead of log
+  }
+};
+
 // delete and start card logic
 
-const onClick = e => {
+const onClick = async e => {
   const startBtn = e.target.closest('[data-action="start_exercise_btn"]');
   const deleteBtn = e.target.closest('[data-action="delete_fav_card"]');
   const cardComponent = e.target.closest('[data-component="fav_card"]');
@@ -154,16 +139,22 @@ const onClick = e => {
   }
 
   if (deleteBtn) {
-    if (deleteBtn.dataset.idDelBtn === cardComponent.dataset.idCard) {
-      const idToRemove = Number(deleteBtn.dataset.idDelBtn);
+    const deleteId = deleteBtn.dataset.idDelBtn;
+
+    if (deleteId === cardComponent.dataset.idCard) {
+      const idToRemove = deleteBtn.dataset.idDelBtn;
       removeFromFav(idToRemove);
       checkStorage();
     } else return;
   } else if (startBtn) {
-    const startId = Number(startBtn.dataset.idStartBtn);
-    const arr = getFav(LS_FAV);
-    const outputObj = arr.find(obj => obj._id === startId);
-    handlerStartBtn(outputObj, true);
+    const startId = startBtn.dataset.idStartBtn;
+
+    if (startId === cardComponent.dataset.idCard) {
+      const arrOfObjects = await fetchAndRenderFav(getFav(LS_FAV), false);
+      const toModalOutput = arrOfObjects.find(obj => obj._id === startId);
+      console.log(toModalOutput, true);
+      // add a handlerStartBtn function here instead of log
+    }
   }
 };
 
@@ -172,8 +163,8 @@ const onClick = e => {
 const checkStorage = () => {
   const isFavsExist = getFav(LS_FAV) !== null;
 
-  if (getFav(LS_FAV).some(obj => obj === null)) {
-    const arr = getFav(LS_FAV).filter(obj => obj !== null);
+  if (getFav(LS_FAV) && getFav(LS_FAV).some(key => key === null)) {
+    const arr = getFav(LS_FAV).filter(key => key !== null);
     setFav(arr);
   }
   if (
@@ -181,14 +172,15 @@ const checkStorage = () => {
     !isFavsExist ||
     getFav(LS_FAV).length === 0
   ) {
+    // console.log('No Favs');
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');
-    console.log('No Favs');
+    refs.cardSet.removeEventListener('click', onClick);
   } else {
-    console.log('Favs there');
+    // console.log('Favs there');
     refs.noCards.classList.add('visually-hidden');
     refs.cardSet.classList.remove('visually-hidden');
-    renderCards(getFav(LS_FAV));
+    fetchAndRenderFav(getFav(LS_FAV));
     refs.cardSet.addEventListener('click', onClick);
   }
 };
