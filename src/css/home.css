@@ -16,6 +16,18 @@
   background: #e8e8e8 url(../images/hero-img/mobile-hero.jpg) no-repeat
     center/cover;
   margin-bottom: 20px;
+  z-index: -1;
+  animation: hero-img-container-animation 3s forwards;
+}
+@keyframes hero-img-container-animation {
+  from {
+    transform: translateX(100%); /* початок з правого боку */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* завершення у початковій позиції */
+    opacity: 1;
+  }
 }
 
 .hero-list {
@@ -64,6 +76,19 @@
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.01em;
+}
+
+.hero-title,
+.hero-text {
+  animation: hero-text-container-animation 4s;
+}
+@keyframes hero-text-container-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* !============================ /MOBILE ============================ */
 
