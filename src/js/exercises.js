@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as api from './api';
 // import handlerStartBtn from './exercises_card.js';
 
 const refs = {
@@ -34,7 +35,7 @@ async function fetchFilter() {
       dataSource: function (done) {
         $.ajax({
           type: 'GET',
-          url: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}&limit=${300}`,
+          url: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}`,
           success: function (response) {
             refs.navButtons.innerHTML = '';
             done(response.results);
@@ -45,7 +46,6 @@ async function fetchFilter() {
         });
       },
       callback: function (data, pagination) {
-        // Обробка отриманих даних та оновлення DOM
         if (data.length === 0) {
           refs.exercises.insertAdjacentHTML(
             'beforeend',
@@ -169,20 +169,20 @@ async function makeExercisesCards(response) {
           <span class="rating">
               ${rating}
               <svg fill="#EEA10C" width="18" height="18">
-                  <use href="../images/icon.svg#icon-star"></use>
+                  <use href="./images/icon.svg#icon-star"></use>
               </svg>
           </span>
           <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
           Start
               <svg stroke="#1B1B1B"  width="14" height="14">
-                  <use href="../images/icon.svg#icon-arrow"></use>
+                  <use href="./images/icon.svg#icon-arrow"></use>
               </svg>
           </button>
       </div>
       <div>
         <div class="icon-man-wrap">
           <svg class="icon-man" fill="white" width="15" height="15">
-          <use href="../images/icon.svg#icon-man"></use>
+          <use href="./images/icon.svg#icon-man"></use>
           </svg>
         </div>
         <h2 class="exercise-name">${name[0].toUpperCase() + name.slice(1)}</h2>
@@ -238,7 +238,7 @@ refs.searchForm.addEventListener('submit', async event => {
       dataSource: function (done) {
         $.ajax({
           type: 'GET',
-          url: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&keyword=wall&limit=${300}`,
+          url: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&keyword=${keyWord}&limit=${300}`,
           success: function (response) {
             refs.navButtons.innerHTML = '';
             done(response.results);
