@@ -35,7 +35,7 @@ async function fetchFilter() {
       dataSource: function (done) {
         $.ajax({
           type: 'GET',
-          url: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}`,
+          url: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}&limit=${300}`,
           success: function (response) {
             refs.navButtons.innerHTML = '';
             done(response.results);
