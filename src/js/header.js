@@ -45,17 +45,31 @@
 // }
 
 //============================ BURGER-MENU-WORK ============================
-
 const openMenuButton = document.querySelector('.open-mobile-menu-btn');
 const closeMenuButton = document.querySelector('.close-mobile-menu-btn');
 const mobileMenu = document.querySelector('.mobile-menu-wrapper');
 
 openMenuButton.addEventListener('click', function () {
   mobileMenu.classList.add('is-open');
+
+  setTimeout(() => {
+    mobileMenu.classList.add('mobile-menu-wrapper-anim');
+  }, 2500); // Затримка 2.5 секунди
 });
 
 closeMenuButton.addEventListener('click', function () {
-  mobileMenu.classList.remove('is-open');
+  mobileMenu.classList.add('mobile-menu-wrapper-anim-hide');
+
+  setTimeout(function () {
+    mobileMenu.classList.remove('is-open');
+    mobileMenu.classList.remove('mobile-menu-wrapper-anim');
+  }, 1400);
+});
+
+mobileMenu.addEventListener('animationend', event => {
+  if (event.animationName === 'mobile-menu-wrapper-hide-animation') {
+    mobileMenu.classList.remove('mobile-menu-wrapper-anim-hide');
+  }
 });
 //=========================== /BURGER-MENU-WORK ============================
 
@@ -100,7 +114,3 @@ const obsAnim = new IntersectionObserver(
 obsAnim.observe(sectionHeroEl);
 
 //=========================== /STICKY NAVIGATION ===========================
-
-// document.getElementById('backToTop').addEventListener('click', function () {
-//   window.scrollTo({ top: 0, behavior: 'smooth' });
-// });
