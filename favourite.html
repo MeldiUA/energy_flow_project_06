@@ -8,8 +8,8 @@
     <title>Favourite</title>
     <script type="module" crossorigin src="/energy_flow_project_06/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/vendor-df80d4f8.js">
-    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/api-9d7e9e6d.js">
-    <link rel="stylesheet" href="/energy_flow_project_06/assets/api-fc3c15fb.css">
+    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/api-e24e9150.js">
+    <link rel="stylesheet" href="/energy_flow_project_06/assets/api-b3634acd.css">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/vendor-e5212ee8.css">
   </head>
   <body>
@@ -265,7 +265,54 @@
 </section>
 
     
-    
+    <div class="backdrop is-open">
+  <div class="backdrop-container">
+    <button id="form-close-btn" type="button">
+      <svg class="form-close-btn-icon" width="24" height="24">
+        <use href="../images/icon.svg#icon-x"></use>
+      </svg>
+    </button>
+    <form class="backdrop-form">
+      <p class="backdrop-form-text">Rating</p>
+
+      <div class="rating-wrapper">
+        <p class="rating-star-value">0.0</p>
+        <svg class="rating-star-icons" width="24" height="24">
+          <use data-id="1" href="../images/icon.svg#icon-star"></use>
+        </svg>
+        <svg class="rating-star-icons" width="24" height="24">
+          <use data-id="2" href="../images/icon.svg#icon-star"></use>
+        </svg>
+        <svg class="rating-star-icons" width="24" height="24">
+          <use data-id="3" href="../images/icon.svg#icon-star"></use>
+        </svg>
+        <svg class="rating-star-icons" width="24" height="24">
+          <use data-id="4" href="../images/icon.svg#icon-star"></use>
+        </svg>
+        <svg class="rating-star-icons" width="24" height="24">
+          <use data-id="5" href="../images/icon.svg#icon-star"></use>
+        </svg>
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        pattern="^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$"
+        name="user-email"
+        id="user-email"
+        title="Enter your email"
+        required
+      />
+      <textarea
+        class="form-user-comment"
+        name="user-comment"
+        id="user-comment"
+        placeholder="Your comment"
+      ></textarea>
+      <button class="form-send-btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
 
     
   </body>
