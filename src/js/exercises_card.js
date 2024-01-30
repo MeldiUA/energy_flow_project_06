@@ -52,27 +52,27 @@ function renderModal(data) {
             <p class="rating-score">${data.rating}</p>
           </li>
           <li>
-            <svg class="star-rating-icon first-star">
+            <svg class="star-rating-icon">
               <use href="../images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
-            <svg class="star-rating-icon second-star">
+            <svg class="star-rating-icon">
               <use href="../images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
-            <svg class="star-rating-icon third-star">
+            <svg class="star-rating-icon">
               <use href="../images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
-            <svg class="star-rating-icon fourth-star">
+            <svg class="star-rating-icon">
               <use href="../images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
-            <svg class="star-rating-icon fifth-star">
+            <svg class="star-rating-icon">
               <use href="../images/icon.svg#icon-star"></use>
             </svg>
           </li>

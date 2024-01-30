@@ -13,10 +13,6 @@
   fill: rgba(27, 27, 27, 0.2);
 }
 
-.filled-star {
-  fill: #eea10c;
-}
-
 .rating-container {
   display: flex;
   border-bottom: 1px solid rgba(27, 27, 27, 0.2);
