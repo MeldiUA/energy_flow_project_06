@@ -169,7 +169,7 @@ function renderModal(data) {
     document.body.classList.remove('not-scrollable');
   });
 
-  document.querySelector('give-rating-btn').addEventListener('click', () => {
+  document.querySelector('.give-rating-btn').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
     // handlerOpenRate(data._id);
