@@ -1,11 +1,12 @@
 @import url(../css/common.css);
 
 .footer-container {
+  width: 335px;
   height: 471px;
   padding: 40px 20px 20px;
   box-sizing: border-box;
   border-radius: 30px;
-  background-image: url(../images/footer/footer-background-mobile.jpg);
+  background-image: url('../images/footer/footer-background.jpg');
   background-size: cover;
   background-position-x: center;
 }
@@ -35,7 +36,7 @@
 
 .footer-contact-item {
   padding: 8px;
-  height: 20px;
+  height: 36px;
   border-radius: 10px;
   border: 1px solid rgba(246, 246, 246, 0.2);
 }
@@ -170,9 +171,10 @@
 
 @media screen and (min-width: 736px) {
   .footer-container {
+    min-width: 736px;
     height: 576px;
     padding: 64px 48px 32px;
-    background-image: url(../images/footer/footer-background-tablet.jpg);
+    background-image: url("../images/footer/footer-background-tablet.jpg");
     background-size: cover;
     background-position-y: center;
     border-radius: 50px;
@@ -197,7 +199,7 @@
     margin-top: 30px;
   }
   .footer-contact-item {
-    height: 28px;
+    height: 44px;
   }
   .footer-contact-icon {
     width: 28px;
@@ -252,9 +254,10 @@
 
 @media screen and (min-width: 1280px) {
   .footer-container {
+    width: auto;
     height: 454px;
     padding: 64px 48px 26px;
-    background-image: url(../images/footer/footer-background-desktop.jpg);
+    background-image: url("../images/footer/footer-background-desktop.jpg");
   }
 
   .footer-slogan {
@@ -296,5 +299,21 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.28px;
+  }
+}
+
+@media (min-resolution: 192dpi) {
+  .footer-container {
+    background-image: url('../images/footer/footer-background@2.jpg');
+  }
+  @media screen and (min-width: 736px) {
+    .footer-container {
+      background-image: url('../images/footer/footer-background-tablet@2.jpg');
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .footer-container {
+      background-image: url('../images/footer/footer-background-desktop@2.jpg');
+    }
   }
 }
