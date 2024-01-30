@@ -55,14 +55,15 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
-  /* transform */
+  transform: translateX(190%);
+  transition: transform 3s ease, opacity 4s ease;
 }
 
 .mobile-menu-wrapper.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  transform: translateX(0);
 }
 
 .mobile-menu {
