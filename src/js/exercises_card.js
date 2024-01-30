@@ -121,28 +121,11 @@ function renderModal(data) {
     </div>
 </div>`;
   cardBackdrop.innerHTML = markup;
-  if (data.rating < 1.5) {
-    document.querySelector('.first-star').classList.add('filled-star');
-  } else if (data.rating < 2.5) {
-    document.querySelector('.first-star').classList.add('filled-star');
-    document.querySelector('.second-star').classList.add('filled-star');
-  } else if (data.rating < 3.5) {
-    document.querySelector('.first-star').classList.add('filled-star');
-    document.querySelector('.second-star').classList.add('filled-star');
-    document.querySelector('.third-star').classList.add('filled-star');
-  } else if (data.rating < 4.5) {
-    document.querySelector('.first-star').classList.add('filled-star');
-    document.querySelector('.second-star').classList.add('filled-star');
-    document.querySelector('.third-star').classList.add('filled-star');
-    document.querySelector('.fourth-star').classList.add('filled-star');
-  } else {
-    document.querySelector('.first-star').classList.add('filled-star');
-    document.querySelector('.second-star').classList.add('filled-star');
-    document.querySelector('.third-star').classList.add('filled-star');
-    document.querySelector('.fourth-star').classList.add('filled-star');
-    document.querySelector('.fifth-star').classList.add('filled-star');
+  const arrStar = document.querySelectorAll(".star-rating-icon");
+  for(let i = 0; i < Math.round(data.rating); ++i){
+    arrStar[i].style.fill = "#eea10c";
   }
-
+ 
   const addFavBtn = document.querySelector('.add-favourite-btn');
 
   addFavBtn.addEventListener('click', function () {
