@@ -1,8 +1,9 @@
 /* !============================ MOBILE ============================ */
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
-
 
 .header {
   position: absolute;
@@ -17,9 +18,14 @@
 .header-row {
   width: 335px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
 }
 
 .logo {
@@ -46,6 +52,7 @@
   align-items: center;
   border: none;
   background-color: transparent;
+  padding-left: 0;
 }
 
 .mobile-menu-wrapper {
@@ -125,8 +132,6 @@
   padding: 6px 26px;
   color: var(--black-color);
   background-color: #fff;
-
-  /*transition*/
 }
 
 .mobile-social-media-list {
@@ -153,14 +158,6 @@
   stroke: #fff;
   fill: #fff;
 }
-
-.mobile-menu-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-}
 /* ?========================== /MOBILE-MENU ========================== */
 
 /**======================== STICKY NAVIGATION =======================**/
@@ -183,9 +180,6 @@
 .sticky-animation .header-row {
   padding: 10px 40px;
 }
-
-/* @media screen and (min-width: 375px) {
-} */
 /**======================= /STICKY NAVIGATION =======================**/
 /* !============================ /MOBILE ============================ */
 
@@ -218,11 +212,6 @@
     margin-right: 18px;
   }
 
-  .buttons {
-    display: flex;
-    gap: 12px;
-  }
-
   .social-media-list {
     display: flex;
     gap: 12px;
@@ -245,6 +234,27 @@
     display: none;
   }
 
+  .nav-link.active {
+    color: var(--black-color);
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 6px 26px;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
   /**======================== STICKY NAVIGATION =======================**/
   .header {
     transition: opacity 0.9s ease, visibility 0.9s;
