@@ -167,7 +167,7 @@ async function makeExercisesCards(response) {
           <span class="rating">
               ${rating}
               <svg fill="#EEA10C" width="18" height="18">
-                  <use href="./images/icon.svg#icon-star"></use>
+                  <use href="../../images/icon.svg#icon-star"></use>
               </svg>
           </span>
           <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
