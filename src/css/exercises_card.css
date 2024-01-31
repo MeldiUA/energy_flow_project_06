@@ -193,6 +193,10 @@
     gap: 24px;
   }
 
+  .exr-card-cont div {
+    max-width: 342px;
+  }
+
   .exr-image {
     min-width: 270px;
     height: 259px;

@@ -165,6 +165,11 @@
 .exercise-information div:nth-child(2) {
   margin-top: 25px;
 }
+
+.exercise-details {
+  height: 42px;
+  overflow: auto;
+}
 .tag {
   color: var(--white-color);
   font-size: 12px;
@@ -328,6 +333,9 @@
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
 @media screen and (min-width: 1440px) {
+  .exercise-details {
+    height: 18px;
+  }
   .exercises-section .container {
     padding: 64px 48px;
   }
