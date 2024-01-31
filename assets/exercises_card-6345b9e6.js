@@ -18,7 +18,12 @@ import{a as f,i as p}from"./vendor-ce9f25a7.js";(function(){const s=document.cre
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
+            </svg>
+          </li>
+          <li>
+            <svg class="star-rating-icon">
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
@@ -28,17 +33,12 @@ import{a as f,i as p}from"./vendor-ce9f25a7.js";(function(){const s=document.cre
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
-            </svg>
-          </li>
-          <li>
-            <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
         </ul>
@@ -70,7 +70,7 @@ import{a as f,i as p}from"./vendor-ce9f25a7.js";(function(){const s=document.cre
         <button class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>
         </button>
         <button class="give-rating-btn">Give a rating</button>
@@ -78,9 +78,9 @@ import{a as f,i as p}from"./vendor-ce9f25a7.js";(function(){const s=document.cre
     </div>
 </div>`;u.innerHTML=s;const r=document.querySelectorAll(".star-rating-icon");for(let t=0;t<Math.round(e.rating);++t)r[t].style.fill="#eea10c";const n=document.querySelector(".add-favourite-btn");n.addEventListener("click",function(){c?(w(e._id),n.innerHTML=`Add to favourite
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>`,c=!1):(a.push(e),M(a),n.innerHTML=`Remove from
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>`,c=!0)}),document.getElementById("close-card").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable")}),document.querySelector(".give-rating-btn").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),F(e._id)})}export{d as L,R as a,P as g,_ as h,w as r,M as s};
-//# sourceMappingURL=exercises_card-c0fb39d6.js.map
+//# sourceMappingURL=exercises_card-6345b9e6.js.map
