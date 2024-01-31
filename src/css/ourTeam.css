@@ -1,0 +1,209 @@
+.about-team-cont {
+    width: 335px;
+    color: #1B1B1B;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 92%;
+    letter-spacing: -2.7px;
+}
+.header-list {
+    display: flex;
+    justify-content: space-between;
+}
+.header-container{
+    margin-bottom: 28px;
+}
+.black-theme-icon{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 212px;
+    background-color: #7E847F;
+    border-radius: 60px;
+    padding: 8px 12px;
+}
+.black-theme-only{
+    color: #F6F6F6;
+    
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.black-best-cont{
+    padding: 6px 14px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+}
+.black-theme-best{
+    color: #1B1B1B;
+    
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.team-container{
+    margin-bottom: 40px;
+}
+
+.teammate-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    background-color: #E8E8E8;
+    border-radius: 0 0 20px 20px;
+}
+
+.teammate-description-b{
+    background-color: #7E847F;;
+}
+
+
+.teammate-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* column-gap: 40px; */
+    justify-content: center;
+    align-items: center;
+}
+.teammate-list-item {
+    width: 335px;
+}
+.teammate-list-img {
+    width: 100%;
+}
+
+.teammate-title {
+    color: #1B1B1B;    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    letter-spacing: 2px;
+
+    padding-top: 20px;
+}
+.teammate-title-b{
+    color: #F6F6F6;
+}
+
+.teammate-position {
+    color: rgba(27, 27, 27, 0.60);    
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.teammate-position-b{
+    color: rgba(246, 246, 246, 0.60);
+}
+
+.teammate-city-cont {
+    display: flex;
+    justify-content: end;
+}
+.teammate-city {
+    color: #1B1B1B;    
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    padding-right: 32px;
+    padding-bottom: 8px;
+}
+.teammate-city-b{
+    color: #F6F6F6;
+}
+
+.team-descripton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    background: #1B1B1B;
+
+    padding: 40px 17px;
+}
+
+.team-descr-title{
+    color: #F6F6F6;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 132%;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 36px;
+}
+
+.team-descr-text{
+    color: rgba(246, 246, 246, 0.60);
+    
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    /* padding: 40px 16px; */
+}
+
+@media screen and (min-width: 736px) {
+    .about-team-cont {
+        width: 736px;
+        }
+    .teammate-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content:center;
+        align-items: flex-start;
+    }
+    .teammate-list-item{
+        width: calc((736-66)/2);
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    .about-team-cont {
+            width: 1280px;
+        }
+    
+    .teammate-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        align-items: f;
+    }
+
+    .teammate-list-item {
+        width: calc((1280-66*2)/3);
+    }
+}

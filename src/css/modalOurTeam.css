@@ -1,0 +1,129 @@
+#wellcom-modal {
+    /* display: none; */
+    position: fixed;
+    left: 32px;
+    bottom: 64px;
+
+    /* transform: translatex(100%); */
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    transition-property: transform;
+    transition-duration: 2000ms;
+
+    animation: animateX50 3000ms infinite 1000ms;
+}
+
+.close-container {
+    position: relative;
+    margin: auto;
+}
+
+.close {
+    display: block;
+    position: absolute;
+    top: -12px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 28px;
+    color: #F6F6F6;
+    background: #7E847F;
+    cursor: pointer;
+    text-align: center;
+    /* -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px; */
+    border-radius: 15px;
+    /* -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000; */
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    color: #7E847F;
+    background-color: #F6F6F6;
+}
+
+
+.wellcome {
+    display: flex;
+    width: 335px;
+    height: 376px;
+    background-color: #1B1B1BD9;
+    border-radius: 24px;
+}
+
+.modal-img {
+    width: 168px;
+    height: 236px;
+    padding-top: 33px;
+    padding-left: 48px;
+}
+.modal-text {
+    margin-left: 90px;
+    padding-top: 44px;
+}
+
+.q-text {
+    color: rgba(246, 246, 246, 0.60);
+    font-family: "DM Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112%;
+}
+
+.a-text {
+    padding-top: 16px;
+    padding-bottom: 56px;
+    color: rgba(246, 246, 246, 0.60);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25%;
+}
+
+.team-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: #7E847F;
+    width: 240px;
+    height: 48px;
+    border-radius: 32px;
+    border: none;
+
+    color: #F6F6F6;
+
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+ }
+
+ .team-btn:hover {
+    color: #7E847F;
+    background-color: #F6F6F6;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
+@media screen and (min-width: 736px) {
+
+
+}
+
+@media screen and (min-width: 1280px) {
+
+    .wellcome {
+            display: flex;
+            width: 704px;
+            height: 302px;
+            background-color: #1B1B1BD9;
+            border-radius: 24px;
+        }
+
+}
