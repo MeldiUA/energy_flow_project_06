@@ -46,6 +46,7 @@
 
 .section {
   background-color: #7e847f;
+  z-index: 0;
 }
 
 .quote,
@@ -79,3 +80,6 @@
   color: #f6f6f6;
 }
 
+.hero-img-container {
+  z-index: 1;
+}
