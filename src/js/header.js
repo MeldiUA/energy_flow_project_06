@@ -23,9 +23,11 @@ const mobileMenu = document.querySelector('.mobile-menu-wrapper');
 
 openMenuButton.addEventListener('click', function () {
   mobileMenu.classList.add('is-open');
+  document.body.classList.add('not-scrollable');
 });
 
 closeMenuButton.addEventListener('click', function () {
   mobileMenu.classList.remove('is-open');
+  document.body.classList.remove('not-scrollable');
 });
 //=========================== /BURGER-MENU-WORK ============================
