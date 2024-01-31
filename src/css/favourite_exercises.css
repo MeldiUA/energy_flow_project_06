@@ -11,6 +11,7 @@
   box-sizing: border-box;
   padding-top: 40px;
   padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 .favourite_exercises .section_title {
@@ -153,9 +154,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.favourite_exercises .container {
-  padding-bottom: 10px;
-}
 
 /* tab */
 
@@ -165,6 +163,7 @@
     border-radius: 50px;
     padding-top: 64px;
     padding-left: 48px;
+    padding-bottom: 64px;
   }
   .favourite_exercises .section_title {
     margin-bottom: 32px;

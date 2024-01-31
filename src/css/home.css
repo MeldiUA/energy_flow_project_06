@@ -16,18 +16,18 @@
     center/cover;
   margin-bottom: 20px;
   z-index: -1;
-  animation: hero-img-container-animation 3s forwards;
+  /* animation: hero-img-container-animation 3s forwards; */
 }
-@keyframes hero-img-container-animation {
+/* @keyframes hero-img-container-animation {
   from {
-    transform: translateX(100%); /* початок з правого боку */
+    transform: translateX(100%); 
     opacity: 0;
   }
   to {
-    transform: translateX(0); /* завершення у початковій позиції */
+    transform: translateX(0); 
     opacity: 1;
   }
-}
+} */
 
 .hero-list {
   width: 141px;

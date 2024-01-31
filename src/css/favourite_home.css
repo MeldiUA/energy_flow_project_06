@@ -1,5 +1,5 @@
 .quote-110 {
-  margin-top: 88px;
+  margin-top: 96px;
 }
 
 .quote-110-container {
@@ -12,6 +12,8 @@
   border-radius: 30px;
   padding: 42px 20px 40px 66px;
   background-color: #7e847f;
+  width: 375px;
+  box-sizing: border-box;
 }
 
 .min-110-card {
@@ -60,7 +62,7 @@
 /* Tablet */
 @media screen and (min-width: 768px) {
   .quote-110 {
-    margin-top: 188px;
+    margin-top: 180px;
   }
 
   .quote-110-container {
@@ -72,6 +74,7 @@
 
   .quote-110-wrapper {
     padding: 64px 80px 64px 130px;
+    width: 736px;
   }
 
   .quote-110-img {
@@ -94,6 +97,10 @@
 
 /* Desktop */
 @media screen and (min-width: 1440px) {
+  .quote-110 {
+    margin-top: 156px;
+  }
+
   .quote-110-container {
     max-width: 1440px;
     display: flex;
