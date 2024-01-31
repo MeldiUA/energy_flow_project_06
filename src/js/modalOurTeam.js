@@ -1,5 +1,4 @@
 const modalFirst = document.querySelector('#wellcom-modal');
-console.log(modalFirst);
 
 const modalToShow = () => {
   setTimeout(() => {
