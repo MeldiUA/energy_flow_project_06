@@ -1,18 +1,18 @@
-import{g as f,a as o,s as S,r as w,L as i,h as q}from"./assets/exercises_card-7ff984ca.js";import"./assets/vendor-ce9f25a7.js";const p=document.querySelector(".quote-text"),g=document.querySelector(".quote-author"),m="quote-info",r=JSON.parse(localStorage.getItem(m)),d={quote:"",author:"",date:0};r&&r.date!=new Date().getDate()?(p.textContent=r.quote,g.textContent=r.author,h()):(r&&(p.textContent=r.quote,g.textContent=r.author),h());function h(){f().then(t=>y(t)).catch(t=>console.log(t))}function y(t){d.quote=t.quote,d.author=t.author,d.date=new Date().getDate(),localStorage.setItem(m,JSON.stringify(d))}const l={cardSet:document.querySelector(".fav_card_list"),noCards:document.querySelector(".no_cards_wrapper")},b=t=>{const e=new Set;return t.filter(n=>e.has(n._id)?!1:(e.add(n._id),!0))},C=t=>{const a=b(t).map(({name:n,_id:s,burnedCalories:v,bodyPart:c,target:u})=>`<li data-id-card="${s}" data-component="fav_card" class="list_item">
+import{g as f,a as o,s as S,r as w,L as i,h as q}from"./assets/exercises_card-dda205de.js";import"./assets/vendor-ce9f25a7.js";const p=document.querySelector(".quote-text"),g=document.querySelector(".quote-author"),m="quote-info",r=JSON.parse(localStorage.getItem(m)),d={quote:"",author:"",date:0};r&&r.date!=new Date().getDate()?(p.textContent=r.quote,g.textContent=r.author,h()):(r&&(p.textContent=r.quote,g.textContent=r.author),h());function h(){f().then(t=>y(t)).catch(t=>console.log(t))}function y(t){d.quote=t.quote,d.author=t.author,d.date=new Date().getDate(),localStorage.setItem(m,JSON.stringify(d))}const l={cardSet:document.querySelector(".fav_card_list"),noCards:document.querySelector(".no_cards_wrapper")},b=t=>{const e=new Set;return t.filter(n=>e.has(n._id)?!1:(e.add(n._id),!0))},C=t=>{const a=b(t).map(({name:n,_id:s,burnedCalories:v,bodyPart:c,target:u})=>`<li data-id-card="${s}" data-component="fav_card" class="list_item">
           <div class="fav_card">
             <div class="actions_wrapper">
               <div class="workout_wrapper">
                 <span class="workout">workout</span>
                 <button data-id-del-btn="${s}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
-                    <use href="../images/icon.svg#icon-trash"></use>
+                    <use href="./images/icon.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
               <button data-id-start-btn="${s}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
-                  <use href="../images/icon.svg#icon-arrow"></use>
+                  <use href="./images/icon.svg#icon-arrow"></use>
                 </svg>
               </button>
             </div>
@@ -20,7 +20,7 @@ import{g as f,a as o,s as S,r as w,L as i,h as q}from"./assets/exercises_card-7f
             <div class="inner_wrapper">
               <div class="icon_man">
                 <svg width="16" height="16">
-                  <use href="../images/icon.svg#icon-man"></use>
+                  <use href="./images/icon.svg#icon-man"></use>
                 </svg>
               </div>
               <p class="exercise_name">${n}</p>
