@@ -18,9 +18,14 @@
 .header-row {
   width: 335px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 40px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
 }
 
 .logo {
@@ -47,6 +52,7 @@
   align-items: center;
   border: none;
   background-color: transparent;
+  padding-left: 0;
 }
 
 .mobile-menu-wrapper {
@@ -126,8 +132,6 @@
   padding: 6px 26px;
   color: var(--black-color);
   background-color: #fff;
-
-  /*transition*/
 }
 
 .mobile-social-media-list {
@@ -153,14 +157,6 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
   stroke: #fff;
   fill: #fff;
-}
-
-.mobile-menu-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
 }
 /* ?========================== /MOBILE-MENU ========================== */
 
@@ -216,11 +212,6 @@
     margin-right: 18px;
   }
 
-  .buttons {
-    display: flex;
-    gap: 12px;
-  }
-
   .social-media-list {
     display: flex;
     gap: 12px;
@@ -256,12 +247,12 @@
 
   @keyframes fadeIn {
     from {
-        transform: scale(0.9); 
-        opacity: 0;
+      transform: scale(0.9);
+      opacity: 0;
     }
     to {
-        transform: scale(1);
-        opacity: 1;
+      transform: scale(1);
+      opacity: 1;
     }
   }
   /**======================== STICKY NAVIGATION =======================**/

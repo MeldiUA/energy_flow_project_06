@@ -87,14 +87,14 @@ const renderCards = arr => {
                 <span class="workout">workout</span>
                 <button data-id-del-btn="${_id}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
-                    <use href="../images/icon.svg#icon-trash"></use>
+                    <use href="./images/icon.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
               <button data-id-start-btn="${_id}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
-                  <use href="../images/icon.svg#icon-arrow"></use>
+                  <use href="./images/icon.svg#icon-arrow"></use>
                 </svg>
               </button>
             </div>
@@ -102,7 +102,7 @@ const renderCards = arr => {
             <div class="inner_wrapper">
               <div class="icon_man">
                 <svg width="16" height="16">
-                  <use href="../images/icon.svg#icon-man"></use>
+                  <use href="./images/icon.svg#icon-man"></use>
                 </svg>
               </div>
               <p class="exercise_name">${name}</p>

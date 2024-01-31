@@ -1,8 +1,15 @@
+.exercises-section {
+  max-width: 375px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .exercises-section .container {
   border-radius: 30px;
   background: var(--second-background);
   padding: 40px 20px;
-  margin: 20px auto;
+  margin: auto;
 }
 .exercises-title {
   font-weight: 400;
@@ -21,8 +28,14 @@
   display: flex;
   gap: 6px;
   margin-bottom: 40px;
-}
-.filter {
+
+  color: #1b1b1b;
+
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .filter button {
@@ -267,6 +280,11 @@
 
 /* ADAPTIVE ON TABLETS */
 @media screen and (min-width: 768px) {
+  .exercises-section {
+    max-width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .exercises-section .container {
     padding: 64px 48px;
   }
@@ -306,7 +324,7 @@
     margin-bottom: 32px;
   }
   .exercise {
-    margin-bottom: 0;
+    margin: 0;
     max-width: 313px;
     max-height: 250px;
   }
@@ -333,6 +351,9 @@
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
 @media screen and (min-width: 1440px) {
+  .exercises-section {
+    max-width: 1440px;
+  }
   .exercise-details {
     height: 18px;
   }
