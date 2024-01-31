@@ -1,4 +1,9 @@
-@import url(../css/common.css);
+.footer {
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+}
 
 .footer-container {
   height: 471px;
@@ -169,6 +174,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .footer {
+    max-width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .footer-container {
     height: 576px;
     padding: 64px 48px 32px;
@@ -251,6 +261,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .footer {
+    max-width: 1440px;
+  }
   .footer-container {
     height: 454px;
     padding: 64px 48px 26px;

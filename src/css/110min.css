@@ -1,10 +1,12 @@
 .min-110 {
-  margin: 20px 0;
+  max-width: 375px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .min-110-container {
-  max-width: 375px;
-  margin: 0 auto;
+  padding: 0;
 }
 
 .min-110-wrapper {
@@ -72,11 +74,9 @@
 /* Tablet */
 @media screen and (min-width: 768px) {
   .min-110 {
-    margin: 16px 0;
-  }
-
-  .min-110-container {
     max-width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .min-110-img {
@@ -113,6 +113,9 @@
 
 /* Desktop */
 @media screen and (min-width: 1440px) {
+  .min-110 {
+    max-width: 1440px;
+  }
   .min-110-container {
     max-width: 1440px;
     display: flex;
