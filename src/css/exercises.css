@@ -1,6 +1,6 @@
 .exercises-section {
   max-width: 375px;
-  margin: auto;
+  margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -9,7 +9,6 @@
   border-radius: 30px;
   background: var(--second-background);
   padding: 40px 20px;
-  margin: auto;
 }
 .exercises-title {
   font-weight: 400;

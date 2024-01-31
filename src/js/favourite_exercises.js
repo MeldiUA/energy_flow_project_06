@@ -164,7 +164,6 @@ const onClick = e => {
     const arr = getFav(LS_FAV);
     const outputObj = arr.find(obj => obj._id === startId);
     console.log(outputObj);
-    debugger;
     handlerStartBtn(outputObj, true);
   }
 };
