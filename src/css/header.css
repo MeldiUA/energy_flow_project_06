@@ -1,4 +1,9 @@
 /* !============================ MOBILE ============================ */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+
 .header {
   position: absolute;
   top: 0;
