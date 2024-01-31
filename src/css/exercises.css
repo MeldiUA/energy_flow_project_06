@@ -55,7 +55,7 @@
 .exercises {
   gap: 20px;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .exercise {
   margin: 0 auto;
@@ -261,7 +261,7 @@
 }
 
 /* ADAPTIVE ON TABLETS */
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 768px) {
   .exercises-section .container {
     padding: 64px 48px;
   }
@@ -298,7 +298,7 @@
     flex-wrap: wrap;
     gap: 14px;
     width: 640px;
-    margin: 0 auto;
+    margin-bottom: 32px;
   }
   .exercise {
     margin-bottom: 0;
@@ -327,7 +327,7 @@
 }
 
 /* ADAPTIVE ON LAPTOPS AND COMPUTERS*/
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 1440px) {
   .exercises-section .container {
     padding: 64px 48px;
   }

@@ -8,6 +8,9 @@
   min-height: 450px;
   background-color: var(--second-background);
   border-radius: 30px;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-left: 20px;
 }
 
 .favourite_exercises .section_title {
@@ -153,10 +156,12 @@
 
 /* tab */
 
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 768px) {
   .favourite_exercises .container {
     min-height: 100vh;
     border-radius: 50px;
+    padding-top: 64px;
+    padding-left: 48px;
   }
   .favourite_exercises .section_title {
     margin-bottom: 32px;
@@ -226,7 +231,7 @@
 
 /* desk */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .favourite_exercises .fav_card_list {
     column-gap: 20px;
     row-gap: 28px;

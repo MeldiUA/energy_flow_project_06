@@ -1,4 +1,4 @@
-// import handlerStartBtn from './exercises_card.js';
+ import handlerStartBtn from './exercises_card.js';
 
 import {
   getFav,
@@ -14,52 +14,52 @@ const refs = {
 
 // emulation
 
-const demoObj1 = {
-  name: 'Air bike',
-  excDetails: {
-    burnedCalories: 13,
-    bodyPart: 'Waist',
-    target: 'Biceps',
-  },
-  _id: 1,
-  favourite: true,
-};
+// const demoObj1 = {
+//   name: 'Air bike',
+//   excDetails: {
+//     burnedCalories: 13,
+//     bodyPart: 'Waist',
+//     target: 'Biceps',
+//   },
+//   _id: 1,
+//   favourite: true,
+// };
 
-const demoObj2 = {
-  name: 'Stationary bike walk',
-  excDetails: {
-    burnedCalories: 116,
-    bodyPart: 'Cardio',
-    target: 'Cardiovascular system',
-  },
-  _id: 2,
-  favourite: false,
-};
+// const demoObj2 = {
+//   name: 'Stationary bike walk',
+//   excDetails: {
+//     burnedCalories: 116,
+//     bodyPart: 'Cardio',
+//     target: 'Cardiovascular system',
+//   },
+//   _id: 2,
+//   favourite: false,
+// };
 
-const demoObj2_5 = {
-  name: 'Stationary bike walk',
-  excDetails: {
-    burnedCalories: 116,
-    bodyPart: 'Cardio',
-    target: 'Cardiovascular system',
-  },
-  _id: 2,
-  favourite: false,
-};
+// const demoObj2_5 = {
+//   name: 'Stationary bike walk',
+//   excDetails: {
+//     burnedCalories: 116,
+//     bodyPart: 'Cardio',
+//     target: 'Cardiovascular system',
+//   },
+//   _id: 2,
+//   favourite: false,
+// };
 
-const demoObj3 = {
-  name: 'mcChicken burger',
-  excDetails: {
-    burnedCalories: -150,
-    bodyPart: 'Tummy',
-    target: 'Hunger',
-  },
-  _id: 3,
-};
+// const demoObj3 = {
+//   name: 'mcChicken burger',
+//   excDetails: {
+//     burnedCalories: -150,
+//     bodyPart: 'Tummy',
+//     target: 'Hunger',
+//   },
+//   _id: 3,
+// };
 
-const fav = [demoObj1, demoObj2, demoObj2_5, demoObj3];
+// const fav = [demoObj1, demoObj2, demoObj2_5, demoObj3];
 
-setFav(fav);
+// setFav(fav);
 
 // render logic
 
@@ -79,7 +79,7 @@ const renderCards = arr => {
   const uniqueIdOnlyArray = uniqueIdFilter(arr);
 
   const markup = uniqueIdOnlyArray.map(
-    ({ name, _id, excDetails: { burnedCalories, bodyPart, target } }) => {
+    ({ name, _id, burnedCalories, bodyPart, target } ) => {
       return `<li data-id-card="${_id}" data-component="fav_card" class="list_item">
           <div class="fav_card">
             <div class="actions_wrapper">
@@ -160,9 +160,11 @@ const onClick = e => {
       checkStorage();
     } else return;
   } else if (startBtn) {
-    const startId = Number(startBtn.dataset.idStartBtn);
+    const startId = startBtn.dataset.idStartBtn;
     const arr = getFav(LS_FAV);
     const outputObj = arr.find(obj => obj._id === startId);
+    console.log(outputObj);
+    debugger;
     handlerStartBtn(outputObj, true);
   }
 };

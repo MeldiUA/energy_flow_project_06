@@ -6,6 +6,10 @@ const form = document.querySelector('form');
 const email = document.querySelector('input');
 const expressionKey = 'feedback-form-state';
 
+$('form input').on('keypress', function(e) {
+  return e.which !== 13;
+});
+
 function saveDataToLocalStorage() {
   const formData = {
     email: email.value,
