@@ -1,4 +1,10 @@
 /* !============================ MOBILE ============================ */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -245,8 +251,19 @@
     padding: 6px 26px;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
   }
 
+  @keyframes fadeIn {
+    from {
+        transform: scale(0.9); 
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
   /**======================== STICKY NAVIGATION =======================**/
   .header {
     transition: opacity 0.9s ease, visibility 0.9s;
