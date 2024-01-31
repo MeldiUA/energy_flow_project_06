@@ -53,7 +53,12 @@ function renderModal(data) {
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
+            </svg>
+          </li>
+          <li>
+            <svg class="star-rating-icon">
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
@@ -63,17 +68,12 @@ function renderModal(data) {
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
-            </svg>
-          </li>
-          <li>
-            <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
         </ul>
@@ -113,7 +113,7 @@ function renderModal(data) {
         <button class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>
         </button>
         <button class="give-rating-btn">Give a rating</button>
@@ -134,14 +134,14 @@ function renderModal(data) {
       localStorageLogic.setFav(savedExercises);
       addFavBtn.innerHTML = `Remove from
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>`;
       isFavourite = true;
     } else {
       localStorageLogic.removeFromFav(data._id);
       addFavBtn.innerHTML = `Add to favourite
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>`;
       isFavourite = false;
     }
