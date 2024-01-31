@@ -13,4 +13,5 @@ import * as rate from './js/rate';
 import * as ourTeam from './js/ourTeam';
 import * as modalOurTeam from './js/modalOurTeam';
 import * as scrollToTop from './js/scroll-to-top';
+import * as darkThemeBtn from './js/darkThemeBtn';
 
