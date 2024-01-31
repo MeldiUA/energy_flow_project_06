@@ -153,6 +153,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.favourite_exercises .container {
+  padding-bottom: 10px;
+}
 
 /* tab */
 
