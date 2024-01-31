@@ -31,7 +31,7 @@ export default function handlerStartBtn(exercise, isFav = false, isFavouritePage
   if (isFavourite === true) {
     document.querySelector('.add-favourite-btn').innerHTML = `Remove from
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="./images/icon.svg#icon-heart"></use>
           </svg>`;
   }
 }
@@ -41,7 +41,7 @@ function renderModal(data, isFavouritePage) {
     <div class="exr-card-cont">
       <button id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon">
-        <use href="../images/icon.svg#icon-x"></use>
+        <use href="./images/icon.svg#icon-x"></use>
       </svg>
     </button>
     <img src="${data.gifUrl}" alt="example-img" class="exr-image" />
@@ -64,7 +64,7 @@ function renderModal(data, isFavouritePage) {
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="./images/icon.svg#icon-star"></use>
             </svg>
           </li>
           <li>

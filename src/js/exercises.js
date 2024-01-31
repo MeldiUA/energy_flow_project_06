@@ -1,5 +1,4 @@
-import axios from 'axios';
-import * as api from './api';
+
 import handlerStartBtn from './exercises_card.js';
 
 const refs = {
