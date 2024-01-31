@@ -83,4 +83,4 @@ import{a as f,i as p}from"./vendor-ce9f25a7.js";(function(){const s=document.cre
           <svg class="heart-icon">
             <use href="../images/icon.svg#icon-heart"></use>
           </svg>`,c=!0)}),document.getElementById("close-card").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable")}),document.querySelector(".give-rating-btn").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),F(e._id)})}export{d as L,R as a,P as g,_ as h,w as r,M as s};
-//# sourceMappingURL=exercises_card-3a89f3f7.js.map
+//# sourceMappingURL=exercises_card-7ff984ca.js.map
