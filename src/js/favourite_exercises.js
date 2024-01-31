@@ -172,15 +172,7 @@ const onClick = e => {
 const checkStorage = () => {
   const isFavsExist = getFav(LS_FAV) !== null;
 
-  if (getFav(LS_FAV).some(obj => obj === null)) {
-    const arr = getFav(LS_FAV).filter(obj => obj !== null);
-    setFav(arr);
-  }
-  if (
-    localStorage.length === 0 ||
-    !isFavsExist ||
-    getFav(LS_FAV).length === 0
-  ) {
+  if (!isFavsExist) {
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');
   } else {
