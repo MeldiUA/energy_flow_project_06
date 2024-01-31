@@ -178,9 +178,6 @@
 .sticky-animation .header-row {
   padding: 10px 40px;
 }
-
-/* @media screen and (min-width: 375px) {
-} */
 /**======================= /STICKY NAVIGATION =======================**/
 /* !============================ /MOBILE ============================ */
 
@@ -238,6 +235,16 @@
 
   .open-mobile-menu-btn {
     display: none;
+  }
+
+  .nav-link.active {
+    color: var(--black-color);
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 6px 26px;
+    justify-content: center;
+    align-items: center;
   }
 
   /**======================== STICKY NAVIGATION =======================**/
