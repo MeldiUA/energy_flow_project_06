@@ -1,152 +1,149 @@
 .quote {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .quote-container {
-    max-width: 335px;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .quote-wrapper {
-    position: relative;
-    max-width: 100%;
-    border-radius: 30px;
-    padding: 42px 20px 40px 66px;
-    background-color: #7e847f;
+  position: relative;
+  max-width: 100%;
+  border-radius: 30px;
+  padding: 42px 20px 40px 66px;
+  background-color: #7e847f;
 }
 
 .quote-title {
-    color: var(--white-color);
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: 'DM Sans';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 16px;
+  color: var(--white-color);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 16px;
 }
 
 .quote-text {
-    color: var(--white-color);
-    font-family: 'DM Sans';
-    font-size: 14px;
-    font-style: normal;
-    line-height: 1.285;
-    opacity: 0.6;
+  color: var(--white-color);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.285;
+  opacity: 0.6;
 }
 
 .quote-author {
-    color: var(--white-color);
-    font-family: 'DM Sans';
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-top: 25px;
+  color: var(--white-color);
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 25px;
 }
 
 .quote-icon {
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    display: grid;
-    place-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background-color: rgba(246, 246, 246, 0.1);
-    fill: var(--white-color);
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(246, 246, 246, 0.1);
+  fill: var(--white-color);
 }
 
 .quote-icon svg {
-    width: 20px;
-    height: 18px;
+  width: 20px;
+  height: 18px;
 }
 
 .quote-commas-icon {
-    position: absolute;
-    top: 40px;
-    right: 20px;
-    width: 28px;
-    height: 28px;
-    fill: var(--white-color);
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  fill: var(--white-color);
 }
 
 @media screen and (min-resolution: 192dpi) {
-    .quote-img {
-        content: url('../images/quote-imgs/quote-mobile@2x.png');
-    }
+  .quote-img {
+    content: url('../images/quote-imgs/quote-mobile@2x.png');
+  }
 }
 
 /* Tablet */
-@media screen and (min-width: 736px) {
-    .quote {
-        margin: 16px 0;
-    }
+@media screen and (min-width: 768px) {
+  .quote {
+    margin: 16px 0;
+  }
 
-    .quote-container {
-        max-width: 736px;
-    }
+  .quote-container {
+  }
 
-    .quote-img {
-        content: url('../images/quote-imgs/quote-tablet.png');
-        border-radius: 50px;
-    }
+  .quote-img {
+    content: url('../images/quote-imgs/quote-tablet.png');
+    border-radius: 50px;
+  }
 
-    .quote-wrapper {
-        border-radius: 50px;
-        padding: 64px 80px 64px 130px;
-    }
+  .quote-wrapper {
+    border-radius: 50px;
+    padding: 64px 80px 64px 130px;
+  }
 
-    .quote-title {
-        font-size: 24px;
-        line-height: 1.33;
-    }
+  .quote-title {
+    font-size: 24px;
+    line-height: 1.33;
+  }
 
-    .quote-text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
+  .quote-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
-    .quote-icon {
-        top: 64px;
-        left: 80px;
-    }
+  .quote-icon {
+    top: 64px;
+    left: 80px;
+  }
 
-    .quote-commas-icon {
-        top: 32px;
-        right: 80px;
-        width: 48px;
-        height: 48px;
-    }
+  .quote-commas-icon {
+    top: 32px;
+    right: 80px;
+    width: 48px;
+    height: 48px;
+  }
 }
 
-@media screen and (min-width: 736px) and (min-resolution: 192dpi) {
-    .quote-img {
-        content: url('../images/quote-imgs/quote-tablet@2x.png');
-    }
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .quote-img {
+    content: url('../images/quote-imgs/quote-tablet@2x.png');
+  }
 }
 
 /* Desktop */
-@media screen and (min-width: 1280px) {
-    .quote-container {
-        max-width: 1408px;
-        display: flex;
-        justify-content: center;
-    }
+@media screen and (min-width: 1440px) {
+  .quote-container {
+    display: flex;
+    justify-content: center;
+  }
 
-    .quote-img {
-        content: url('../images/quote-imgs/quote-desktop.png');
-        width: calc(100% / 2);
-        height: auto;
-    }
+  .quote-img {
+    content: url('../images/quote-imgs/quote-desktop.png');
+    width: calc(100% / 2);
+    height: auto;
+  }
 
-    .quote-wrapper {
-        width: 100%;
-    }
+  .quote-wrapper {
+    width: 100%;
+  }
 }
 
-@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
-    .quote-img {
-        content: url('../images/quote-imgs/quote-desktop@2x.png');
-    }
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .quote-img {
+    content: url('../images/quote-imgs/quote-desktop@2x.png');
+  }
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as api from './api';
-// import handlerStartBtn from './exercises_card.js';
+import handlerStartBtn from './exercises_card.js';
 
 const refs = {
   filters: document.querySelector('.filters'),
@@ -152,7 +152,6 @@ async function loadExercises(event) {
       },
     });
   });
-  // makeExercisesCards(resp
 }
 
 async function makeExercisesCards(response) {
@@ -212,19 +211,19 @@ async function makeExercisesCards(response) {
   refs.exercises.insertAdjacentHTML('beforeend', markup);
 }
 
-// refs.exercises.addEventListener('click', event => {
-//   const startBtn = event.target.closest('[data-action="start_exercise_btn"]');
+refs.exercises.addEventListener('click', event => {
+  const startBtn = event.target.closest('[data-action="start_exercise_btn"]');
 
-//   if (!event.target.tagName === 'BUTTON' || (!startBtn)) {
-//     return;
-//   }
-//   if (startBtn) {
-//     const startId = startBtn.dataset.idStartBtn;
-//     const outputObj = localResponse.find(obj => obj._id === startId);
+  if (!event.target.tagName === 'BUTTON' || (!startBtn)) {
+    return;
+  }
+  if (startBtn) {
+    const startId = startBtn.dataset.idStartBtn;
+    const outputObj = localResponse.find(obj => obj._id === startId);
 
-//     handlerStartBtn(outputObj);
-//   }
-// });
+    handlerStartBtn(outputObj);
+  }
+});
 
 refs.searchForm.addEventListener('submit', async event => {
   event.preventDefault();

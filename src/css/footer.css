@@ -1,7 +1,6 @@
 @import url(../css/common.css);
 
 .footer-container {
-  width: 335px;
   height: 471px;
   padding: 40px 20px 20px;
   box-sizing: border-box;
@@ -169,12 +168,11 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 768px) {
   .footer-container {
-    min-width: 736px;
     height: 576px;
     padding: 64px 48px 32px;
-    background-image: url("../images/footer/footer-background-tablet.jpg");
+    background-image: url('../images/footer/footer-background-tablet.jpg');
     background-size: cover;
     background-position-y: center;
     border-radius: 50px;
@@ -252,12 +250,11 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .footer-container {
-    width: auto;
     height: 454px;
     padding: 64px 48px 26px;
-    background-image: url("../images/footer/footer-background-desktop.jpg");
+    background-image: url('../images/footer/footer-background-desktop.jpg');
   }
 
   .footer-slogan {
@@ -306,12 +303,12 @@
   .footer-container {
     background-image: url('../images/footer/footer-background@2.jpg');
   }
-  @media screen and (min-width: 736px) {
+  @media screen and (min-width: 768px) {
     .footer-container {
       background-image: url('../images/footer/footer-background-tablet@2.jpg');
     }
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1440px) {
     .footer-container {
       background-image: url('../images/footer/footer-background-desktop@2.jpg');
     }
