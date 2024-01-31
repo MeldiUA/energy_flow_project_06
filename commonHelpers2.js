@@ -10,7 +10,7 @@ import"./assets/index-ea03cad6.js";import{h as B,g as N}from"./assets/exercises_
           <span class="rating">
               ${n}
               <svg fill="#EEA10C" width="18" height="18">
-                  <use href="./images/icon.svg#icon-star"></use>
+                  <use href="../../images/icon.svg#icon-star"></use>
               </svg>
           </span>
           <button data-action="start_exercise_btn" data-id-start-btn="${a}" class="details-link">
