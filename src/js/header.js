@@ -58,8 +58,30 @@ closeMenuButton.addEventListener('click', function () {
   mobileMenu.classList.remove('is-open');
 });
 //=========================== /BURGER-MENU-WORK ============================
+window.onload = function () {
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 0);
+};
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the current URL
+  var currentPage = window.location.href;
 
+  // Get the nav links
+  var homeLink = document.getElementById('homeLink');
+  var favoritesLink = document.getElementById('favoritesLink');
+
+  // Check if the current page is Home or Favorites and add the 'active' class accordingly
+  if (currentPage.includes('index.html')) {
+    homeLink.classList.add('active');
+    favoritesLink.classList.remove('active');
+  } else if (currentPage.includes('favourite.html')) {
+    favoritesLink.classList.add('active');
+    homeLink.classList.remove('active');
+  }
+});
+  
 // document.getElementById('backToTop').addEventListener('click', function () {
 //   window.scrollTo({ top: 0, behavior: 'smooth' });
 // });
