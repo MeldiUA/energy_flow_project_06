@@ -8,37 +8,14 @@
     <title>Favourite</title>
     <script type="module" crossorigin src="/energy_flow_project_06/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/vendor-ce9f25a7.js">
-    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/exercises_card-6345b9e6.js">
-    <link rel="stylesheet" href="/energy_flow_project_06/assets/exercises_card-e4ff6f95.css">
+    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/exercises_card-398ce7be.js">
+    <link rel="stylesheet" href="/energy_flow_project_06/assets/exercises_card-fe79d578.css">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/vendor-e5212ee8.css">
   </head>
   <body>
     <header class="header">
   <div class="container header-row">
     <a class="logo" href="./index.html">energy.flow</a>
-
-    <!-- <div class="toggle-nav">
-      <div class="toggle-nav-block">
-        <nav>
-          <ul class="toggle-list">
-            <li class="toggle-list-item">
-              <a class="toggle-button" id="homeButton" href="../index.html"
-                >Home</a
-              >
-            </li>
-            <li class="toggle-list-item">
-              <a
-                class="toggle-button"
-                id="favoritesButton"
-                href="../favourite.html"
-                >Favorites</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <div class="toggle-indicator"></div>
-      </div>
-    </div> -->
 
     <nav class="nav">
       <ul class="nav-list">
@@ -69,10 +46,10 @@
       <div class="theme-switch">
         <input type="checkbox" class="checkbox" id="theme-checkbox" />
         <label for="theme-checkbox" class="label">
-          <svg class="icon fa-sun" width="28" height="28">
+          <svg class="icon fa-sun">
             <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-sun"></use>
           </svg>
-          <svg class="icon fa-moon" width="28" height="28">
+          <svg class="icon fa-moon">
             <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-moon"></use>
           </svg>
         </label>
@@ -112,15 +89,13 @@
           </a>
         </li>
       </ul>
+      <button class="open-mobile-menu-btn" type="button">
+        <svg class="icon-mobile-nav" width="32" height="16">
+          <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-menu"></use>
+        </svg>
+      </button>
     </div>
-
-    <button class="open-mobile-menu-btn" type="button">
-      <svg class="icon-mobile-nav" width="32" height="16">
-        <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-menu"></use>
-      </svg>
-    </button>
   </div>
-  <!-- <script type="module" src="../js/change-theme.js"></script> -->
 </header>
 
 <!-- mobile-menu -->
@@ -145,57 +120,42 @@
       </ul>
     </nav>
 
-    <div class="mobile-menu-buttons">
-      <div class="mobile-menu-theme-checkbox">
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="label">
-          <!-- <i class="fas fa-moon"></i> -->
-          <svg width="28" height="28" class="fas fa-moon">
-            <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-moon"></use>
+    <ul class="mobile-social-media-list">
+      <li>
+        <a
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          class="social-media-link"
+        >
+          <svg width="28" height="28" class="social-media-icon">
+            <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-facebook"></use>
           </svg>
-          <!-- <i class="fas fa-sun"></i> -->
-          <svg width="28" height="28" class="fas fa-sun">
-            <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-sun"></use>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          class="social-media-link"
+        >
+          <svg width="28" height="28" class="social-media-icon">
+            <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-instagram"></use>
           </svg>
-          <div class="ball"></div>
-        </label>
-      </div>
-      <ul class="mobile-social-media-list">
-        <li>
-          <a
-            href="https://www.facebook.com/goITclub/"
-            target="_blank"
-            class="social-media-link"
-          >
-            <svg width="28" height="28" class="social-media-icon">
-              <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-facebook"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/goitclub/"
-            target="_blank"
-            class="social-media-link"
-          >
-            <svg width="28" height="28" class="social-media-icon">
-              <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-instagram"></use>
-            </svg>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.youtube.com/c/GoIT"
-            target="_blank"
-            class="social-media-link"
-          >
-            <svg width="28" height="28" class="social-media-icon">
-              <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-youtube"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          class="social-media-link"
+        >
+          <svg width="28" height="28" class="social-media-icon">
+            <use href="/energy_flow_project_06/assets/icon-35a50b0c.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <!-- </div> -->
   </div>
 </div>
 
