@@ -82,5 +82,5 @@ import{a as g,i as v}from"./vendor-ce9f25a7.js";(function(){const t=document.cre
           </svg>`,c=!1):(a.push(e),F(a),s.innerHTML=`Remove from
           <svg class="heart-icon">
             <use href="./images/icon.svg#icon-heart"></use>
-          </svg>`,c=!0)}),document.getElementById("close-card").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),t&&window.open("./favourite.html")}),document.querySelector(".give-rating-btn").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),A(e._id)})}export{d as L,M as a,N as g,_ as h,C as r,F as s};
-//# sourceMappingURL=exercises_card-f42876c5.js.map
+          </svg>`,c=!0)}),document.getElementById("close-card").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),t&&window.open("./favourite.html")}),document.querySelector(".give-rating-btn").addEventListener("click",()=>{u.classList.remove("card-is-open"),document.body.classList.remove("not-scrollable"),A(e._id)})}export{d as L,M as a,N as g,_ as h,C as r};
+//# sourceMappingURL=exercises_card-29a251c0.js.map

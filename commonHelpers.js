@@ -1,4 +1,4 @@
-import{g as f,a as i,s as S,r as w,L as o,h as q}from"./assets/exercises_card-f42876c5.js";import"./assets/vendor-ce9f25a7.js";const p=document.querySelector(".quote-text"),g=document.querySelector(".quote-author"),_="quote-info",r=JSON.parse(localStorage.getItem(_)),l={quote:"",author:"",date:0};r&&r.date!=new Date().getDate()?(p.textContent=r.quote,g.textContent=r.author,h()):(r&&(p.textContent=r.quote,g.textContent=r.author),h());function h(){f().then(t=>y(t)).catch(t=>console.log(t))}function y(t){l.quote=t.quote,l.author=t.author,l.date=new Date().getDate(),localStorage.setItem(_,JSON.stringify(l))}const d={cardSet:document.querySelector(".fav_card_list"),noCards:document.querySelector(".no_cards_wrapper")},b=t=>{const e=new Set;return t.filter(n=>e.has(n._id)?!1:(e.add(n._id),!0))},C=t=>{const a=b(t).map(({name:n,_id:s,burnedCalories:v,bodyPart:c,target:u})=>`<li data-id-card="${s}" data-component="fav_card" class="list_item">
+import{g as f,a as l,r as w,L as u,h as S}from"./assets/exercises_card-29a251c0.js";import"./assets/vendor-ce9f25a7.js";const p=document.querySelector(".quote-text"),g=document.querySelector(".quote-author"),h="quote-info",r=JSON.parse(localStorage.getItem(h)),o={quote:"",author:"",date:0};r&&r.date!=new Date().getDate()?(p.textContent=r.quote,g.textContent=r.author,_()):(r&&(p.textContent=r.quote,g.textContent=r.author),_());function _(){f().then(t=>q(t)).catch(t=>console.log(t))}function q(t){o.quote=t.quote,o.author=t.author,o.date=new Date().getDate(),localStorage.setItem(h,JSON.stringify(o))}const i={cardSet:document.querySelector(".fav_card_list"),noCards:document.querySelector(".no_cards_wrapper")},y=t=>{const a=new Set;return t.filter(n=>a.has(n._id)?!1:(a.add(n._id),!0))},b=t=>{const e=y(t).map(({name:n,_id:s,burnedCalories:v,bodyPart:d,target:c})=>`<li data-id-card="${s}" data-component="fav_card" class="list_item">
           <div class="fav_card">
             <div class="actions_wrapper">
               <div class="workout_wrapper">
@@ -39,19 +39,19 @@ import{g as f,a as i,s as S,r as w,L as o,h as q}from"./assets/exercises_card-f4
                 <li>
                   <div class="detail_wrapper">
                     <p class="detail_item">
-                      Body part: <span class="detail_value">${c}</span>
+                      Body part: <span class="detail_value">${d}</span>
                     </p>
                   </div>
                 </li>
                 <li>
                   <div class="detail_wrapper">
                     <p class="detail_item">
-                      Target: <span class="detail_value">${u}</span>
+                      Target: <span class="detail_value">${c}</span>
                     </p>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-        </li>`);d.cardSet.innerHTML=a.join("")},x=t=>{const e=t.target.closest('[data-action="start_exercise_btn"]'),a=t.target.closest('[data-action="delete_fav_card"]'),n=t.target.closest('[data-component="fav_card"]');if(!(!t.target.tagName==="BUTTON"||!a&&!e)){if(a)if(a.dataset.idDelBtn===n.dataset.idCard){const s=a.dataset.idDelBtn;w(s),m()}else return;else if(e){const s=e.dataset.idStartBtn,c=i(o).find(u=>u._id===s);q(c,!0,!0)}}},m=()=>{const t=i(o)!==null;if(i(o).some(e=>e===null)){const e=i(o).filter(a=>a!==null);S(e)}localStorage.length===0||!t||i(o).length===0?(d.noCards.classList.remove("visually-hidden"),d.cardSet.classList.add("visually-hidden")):(d.noCards.classList.add("visually-hidden"),d.cardSet.classList.remove("visually-hidden"),C(i(o)),d.cardSet.addEventListener("click",x))};m();
+        </li>`);i.cardSet.innerHTML=e.join("")},x=t=>{const a=t.target.closest('[data-action="start_exercise_btn"]'),e=t.target.closest('[data-action="delete_fav_card"]'),n=t.target.closest('[data-component="fav_card"]');if(!(!t.target.tagName==="BUTTON"||!e&&!a)){if(e)if(e.dataset.idDelBtn===n.dataset.idCard){const s=e.dataset.idDelBtn;w(s),m()}else return;else if(a){const s=a.dataset.idStartBtn,d=l(u).find(c=>c._id===s);S(d,!0,!0)}}},m=()=>{l(u)!==null?(i.noCards.classList.add("visually-hidden"),i.cardSet.classList.remove("visually-hidden"),b(l(u)),i.cardSet.addEventListener("click",x)):(i.noCards.classList.remove("visually-hidden"),i.cardSet.classList.add("visually-hidden"))};m();
 //# sourceMappingURL=commonHelpers.js.map
