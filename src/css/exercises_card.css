@@ -137,6 +137,7 @@
 }
 
 .add-favourite-btn {
+  width: 295px;
   display: flex;
   padding: 12px 83px;
   justify-content: center;
@@ -204,6 +205,7 @@
   }
 
   .add-favourite-btn {
+    width: 194px;
     display: flex;
     padding: 12px 24px;
     border-radius: 30px;

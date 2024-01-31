@@ -1,5 +1,6 @@
- import { handlerOpenRate } from './rate';
+import { handlerOpenRate } from './rate';
 import * as localStorageLogic from './localalStorageLogical';
+
 const cardBackdrop = document.querySelector('.exr-card-backdrop');
 let isFavourite = false;
 let savedExercises = [];
@@ -15,7 +16,7 @@ function capitalizeFirstLetter(string) {
   return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
 }
 
-export default function handlerStartBtn(exercise, isFav = false) {
+export default function handlerStartBtn(exercise, isFav = false, isFavouritePage = false) {
   isFavourite = isFav;
   if (!isFavourite) {
     savedExercises.forEach(element => {
@@ -23,7 +24,7 @@ export default function handlerStartBtn(exercise, isFav = false) {
     });
   }
 
-  renderModal(exercise);
+  renderModal(exercise, isFavouritePage);
   cardBackdrop.classList.add('card-is-open');
   document.body.classList.add('not-scrollable');
 
@@ -35,7 +36,7 @@ export default function handlerStartBtn(exercise, isFav = false) {
   }
 }
 
-function renderModal(data) {
+function renderModal(data, isFavouritePage) {
   const markup = `
     <div class="exr-card-cont">
       <button id="close-card" type="button" class="close-card-button">
@@ -119,7 +120,7 @@ function renderModal(data) {
         <button class="give-rating-btn">Give a rating</button>
       </div>
     </div>
-</div>`;
+    </div>`;
   cardBackdrop.innerHTML = markup;
   const arrStar = document.querySelectorAll(".star-rating-icon");
   for(let i = 0; i < Math.round(data.rating); ++i){
@@ -150,6 +151,9 @@ function renderModal(data) {
   document.getElementById('close-card').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
+    if(isFavouritePage){
+      window.open('./favourite.html')
+    }
   });
 
   document.querySelector('.give-rating-btn').addEventListener('click', () => {

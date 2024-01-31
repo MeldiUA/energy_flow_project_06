@@ -155,7 +155,7 @@ const onClick = e => {
 
   if (deleteBtn) {
     if (deleteBtn.dataset.idDelBtn === cardComponent.dataset.idCard) {
-      const idToRemove = Number(deleteBtn.dataset.idDelBtn);
+      const idToRemove = deleteBtn.dataset.idDelBtn;
       removeFromFav(idToRemove);
       checkStorage();
     } else return;
@@ -163,8 +163,7 @@ const onClick = e => {
     const startId = startBtn.dataset.idStartBtn;
     const arr = getFav(LS_FAV);
     const outputObj = arr.find(obj => obj._id === startId);
-    console.log(outputObj);
-    handlerStartBtn(outputObj, true);
+    handlerStartBtn(outputObj, true, true);
   }
 };
 
@@ -184,9 +183,7 @@ const checkStorage = () => {
   ) {
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');
-    console.log('No Favs');
   } else {
-    console.log('Favs there');
     refs.noCards.classList.add('visually-hidden');
     refs.cardSet.classList.remove('visually-hidden');
     renderCards(getFav(LS_FAV));
