@@ -37,7 +37,7 @@ function refillDataFromLocalStorage() {
 refillDataFromLocalStorage();
 
 email.addEventListener('input', throttle(saveDataToLocalStorage, 500));
-email.addEventListener('input', (event) => {
+email.addEventListener('change', (event) => {
   if(isValidEmail(event.currentTarget.value)){
       submitBtnFooter.disabled = false;
   }
