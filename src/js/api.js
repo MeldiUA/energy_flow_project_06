@@ -69,9 +69,15 @@ export async function getQuote(){
 }
 
 export async function postSubscriptions(email){
-    const response = await axios.post('/subscription', { "email": email });
+    // try {
+        const response = await axios.post('/subscription', { "email": email })
+        return response.data;
+
+    // } catch (error) {
+    //     console.log(error)
+    // }
     //409 error такий email вже підписаний
-    return response.data;
+
 }
 
 export async function addExerciseRatingById(id, {email, rate, comment}){

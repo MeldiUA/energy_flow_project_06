@@ -1,5 +1,6 @@
 import { handlerOpenRate } from './rate';
 import * as localStorageLogic from './localalStorageLogical';
+
 const cardBackdrop = document.querySelector('.exr-card-backdrop');
 let isFavourite = false;
 let savedExercises = [];
@@ -15,7 +16,7 @@ function capitalizeFirstLetter(string) {
   return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
 }
 
-export default function handlerStartBtn(exercise, isFav = false) {
+export default function handlerStartBtn(exercise, isFav = false, isFavouritePage = false) {
   isFavourite = isFav;
   if (!isFavourite) {
     savedExercises.forEach(element => {
@@ -23,24 +24,24 @@ export default function handlerStartBtn(exercise, isFav = false) {
     });
   }
 
-  renderModal(exercise);
+  renderModal(exercise, isFavouritePage);
   cardBackdrop.classList.add('card-is-open');
   document.body.classList.add('not-scrollable');
 
   if (isFavourite === true) {
     document.querySelector('.add-favourite-btn').innerHTML = `Remove from
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>`;
   }
 }
 
-function renderModal(data) {
+function renderModal(data, isFavouritePage) {
   const markup = `
     <div class="exr-card-cont">
       <button id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon">
-        <use href="../images/icon.svg#icon-x"></use>
+        <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
       </svg>
     </button>
     <img src="${data.gifUrl}" alt="example-img" class="exr-image" />
@@ -53,27 +54,27 @@ function renderModal(data) {
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
             </svg>
           </li>
           <li>
             <svg class="star-rating-icon">
-              <use href="../images/icon.svg#icon-star"></use>
+              <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
             </svg>
           </li>
         </ul>
@@ -113,13 +114,13 @@ function renderModal(data) {
         <button class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>
         </button>
         <button class="give-rating-btn">Give a rating</button>
       </div>
     </div>
-</div>`;
+    </div>`;
   cardBackdrop.innerHTML = markup;
   const arrStar = document.querySelectorAll(".star-rating-icon");
   for(let i = 0; i < Math.round(data.rating); ++i){
@@ -134,14 +135,14 @@ function renderModal(data) {
       localStorageLogic.setFav(savedExercises);
       addFavBtn.innerHTML = `Remove from
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>`;
       isFavourite = true;
     } else {
       localStorageLogic.removeFromFav(data._id);
       addFavBtn.innerHTML = `Add to favourite
           <svg class="heart-icon">
-            <use href="../images/icon.svg#icon-heart"></use>
+            <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>`;
       isFavourite = false;
     }
@@ -150,6 +151,9 @@ function renderModal(data) {
   document.getElementById('close-card').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
+    if(isFavouritePage){
+      window.open('./favourite.html')
+    }
   });
 
   document.querySelector('.exr-card-backdrop').addEventListener('click', () => {

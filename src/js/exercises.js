@@ -1,5 +1,4 @@
-import axios from 'axios';
-import * as api from './api';
+
 import handlerStartBtn from './exercises_card.js';
 
 const refs = {
@@ -168,20 +167,20 @@ async function makeExercisesCards(response) {
           <span class="rating">
               ${rating}
               <svg fill="#EEA10C" width="18" height="18">
-                  <use href="./images/icon.svg#icon-star"></use>
+                  <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
               </svg>
           </span>
           <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
           Start
               <svg stroke="#1B1B1B"  width="14" height="14">
-                  <use href="./images/icon.svg#icon-arrow"></use>
+                  <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-arrow"></use>
               </svg>
           </button>
       </div>
       <div>
         <div class="icon-man-wrap">
           <svg class="icon-man" fill="white" width="15" height="15">
-          <use href="./images/icon.svg#icon-man"></use>
+          <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-man"></use>
           </svg>
         </div>
         <h2 class="exercise-name">${name[0].toUpperCase() + name.slice(1)}</h2>

@@ -1,14 +1,13 @@
 /* !============================= MOBILE ============================ */
-.theme-checkbox,
-.theme-switch {
+.theme-checkbox {
   display: none;
 }
 
-/* ?=========================== MOBILE-MENU ========================= */
-
-.mobile-menu-theme-checkbox {
+.theme-switch {
   display: block;
 }
+
+/* ?=========================== MOBILE-MENU ========================= */
 
 .checkbox {
   opacity: 0;
@@ -25,10 +24,11 @@
   justify-content: space-between;
   position: relative;
   padding: 6px;
-  height: 44px;
-  width: 80px;
+
+  height: 28px;
+  width: 28px;
   border-radius: 10px;
-  border: 1px solid rgba(246, 246, 246, 0.2);
+  border: 1px solid rgba(126, 132, 127, 0.2);
   background-color: transparent;
   cursor: pointer;
 }
@@ -44,80 +44,63 @@
   transition: transform 0.3s linear;
 }
 
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.7s ease;
+}
+
+.fa-moon {
+  opacity: 0;
+}
+
+.checkbox:checked + .label .fa-sun {
+  opacity: 0;
+}
+
+.checkbox:checked + .label .fa-moon {
+  opacity: 1;
+}
+
 .fa-sun,
 .fa-moon {
-  stroke: none;
-  fill: var(--white-color);
+  fill: #7e847f;
+  width: 16px;
+  height: 16px;
 }
 
 .label:hover,
 .label:focus {
   .fa-sun,
   .fa-moon {
-    fill: #fff;
+    fill: #5f6560;
   }
 
   .ball {
-    background-color: #fff;
+    background-color: #5f6560;
   }
 
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(95, 101, 96, 0.2);
 }
+
 /* ?========================== /MOBILE-MENU ========================= */
 /* !============================ /MOBILE ============================ */
-
-/* !============================= TABLET ============================ */
 @media screen and (min-width: 768px) {
-  .theme-switch {
-    display: block;
-  }
-
   .label {
-    display: block;
     height: 44px;
     width: 44px;
-    border: 1px solid rgba(126, 132, 127, 0.2);
   }
 
-  .icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.7s ease;
-  }
-
-  .fa-moon {
-    opacity: 0;
-  }
-
-  .checkbox:checked + .label .fa-sun {
-    opacity: 0;
-  }
-
-  .checkbox:checked + .label .fa-moon {
-    opacity: 1;
-  }
-
-  .fa-sun,
-  .fa-moon {
-    fill: #7e847f;
-  }
-
-  .label:hover,
-  .label:focus {
-    .fa-sun,
-    .fa-moon {
-      fill: #5f6560;
-    }
-
-    .ball {
-      background-color: #5f6560;
-    }
-
-    border: 1px solid rgba(95, 101, 96, 0.2);
+  .fa-moon,
+  .fa-sun {
+    width: 28px;
+    height: 28px;
   }
 }
+/* !============================= TABLET ============================ */
+
 /* !============================ /TABLET ============================ */
 
 /* !============================ DESCTOP ============================ */

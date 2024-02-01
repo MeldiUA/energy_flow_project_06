@@ -87,14 +87,14 @@ const renderCards = arr => {
                 <span class="workout">workout</span>
                 <button data-id-del-btn="${_id}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
-                    <use href="./images/icon.svg#icon-trash"></use>
+                    <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
               <button data-id-start-btn="${_id}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
-                  <use href="./images/icon.svg#icon-arrow"></use>
+                  <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-arrow"></use>
                 </svg>
               </button>
             </div>
@@ -102,7 +102,7 @@ const renderCards = arr => {
             <div class="inner_wrapper">
               <div class="icon_man">
                 <svg width="16" height="16">
-                  <use href="./images/icon.svg#icon-man"></use>
+                  <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-man"></use>
                 </svg>
               </div>
               <p class="exercise_name">${name}</p>
@@ -155,7 +155,7 @@ const onClick = e => {
 
   if (deleteBtn) {
     if (deleteBtn.dataset.idDelBtn === cardComponent.dataset.idCard) {
-      const idToRemove = Number(deleteBtn.dataset.idDelBtn);
+      const idToRemove = deleteBtn.dataset.idDelBtn;
       removeFromFav(idToRemove);
       checkStorage();
     } else return;
@@ -163,9 +163,7 @@ const onClick = e => {
     const startId = startBtn.dataset.idStartBtn;
     const arr = getFav(LS_FAV);
     const outputObj = arr.find(obj => obj._id === startId);
-    console.log(outputObj);
-    debugger;
-    handlerStartBtn(outputObj, true);
+    handlerStartBtn(outputObj, true, true);
   }
 };
 
@@ -174,20 +172,10 @@ const onClick = e => {
 const checkStorage = () => {
   const isFavsExist = getFav(LS_FAV) !== null;
 
-  if (getFav(LS_FAV).some(obj => obj === null)) {
-    const arr = getFav(LS_FAV).filter(obj => obj !== null);
-    setFav(arr);
-  }
-  if (
-    localStorage.length === 0 ||
-    !isFavsExist ||
-    getFav(LS_FAV).length === 0
-  ) {
+  if (!isFavsExist) {
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');
-    console.log('No Favs');
   } else {
-    console.log('Favs there');
     refs.noCards.classList.add('visually-hidden');
     refs.cardSet.classList.remove('visually-hidden');
     renderCards(getFav(LS_FAV));
