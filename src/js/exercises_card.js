@@ -44,7 +44,7 @@ export default function handlerStartBtn(
 function renderModal(data, isFavouritePage) {
   const markup = `
     <div class="exr-card-cont">
-      <button id="close-card" type="button" class="close-card-button">
+      <button name="close" id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon">
         <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
       </svg>
@@ -116,13 +116,13 @@ function renderModal(data, isFavouritePage) {
       </div>
       <p class="exr-description">${data.description}</p>
       <div class="buttons-cont">
-        <button class="add-favourite-btn">
+        <button name="add-favorurite" class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon">
             <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>
         </button>
-        <button class="give-rating-btn">Give a rating</button>
+        <button name="rating" class="give-rating-btn">Give a rating</button>
       </div>
     </div>
     </div>`;

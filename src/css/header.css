@@ -16,6 +16,7 @@
 }
 
 .header-row {
+  width: 335px;
   max-width: 335px;
   display: flex;
   align-items: center;
@@ -218,6 +219,8 @@
 @media screen and (min-width: 768px) {
   .header-row {
     width: auto;
+    max-width: 768px;
+    width: auto;
     padding: 0 48px;
     justify-content: left;
   }
@@ -309,6 +312,7 @@
 /* !============================ DESCTOP ============================ */
 @media screen and (min-width: 1440px) {
   .header-row {
+    max-width: 1440px;
     padding: 0 64px;
   }
 
