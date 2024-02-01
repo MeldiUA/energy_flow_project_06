@@ -9,22 +9,22 @@
     <script type="module" crossorigin src="/energy_flow_project_06/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/index-eab60e90.js">
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/vendor-ce9f25a7.js">
-    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/favourite_exercises-ac9bc5fa.js">
+    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/favourite_exercises-ab7228cc.js">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/index-5e67944d.css">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/vendor-e5212ee8.css">
   </head>
   <body>
     <header class="header">
   <div class="container header-row">
-    <a class="logo" href="./index.html">energy.flow</a>
+    <a aria-label="main" class="logo" href="./index.html">energy.flow</a>
 
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-list-item">
-          <a class="nav-link active" id="homeLink" href="./index.html">Home</a>
+          <a aria-label="home" class="nav-link active" id="homeLink" href="./index.html">Home</a>
         </li>
         <li class="nav-list-item">
-          <a class="nav-link" id="favoritesLink" href="./favourite.html"
+          <a aria-label="favorites" class="nav-link" id="favoritesLink" href="./favourite.html"
             >Favorites</a
           >
         </li>
@@ -57,7 +57,7 @@
       </div>
       <ul class="social-media-list">
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.facebook.com/goITclub/"
             target="_blank"
             class="social-media-link"
@@ -68,7 +68,7 @@
           </a>
         </li>
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.instagram.com/goitclub/"
             target="_blank"
             class="social-media-link"
@@ -79,7 +79,7 @@
           </a>
         </li>
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.youtube.com/c/GoIT"
             target="_blank"
             class="social-media-link"
@@ -90,7 +90,7 @@
           </a>
         </li>
       </ul>
-      <button class="open-mobile-menu-btn" type="button">
+      <button class="open-mobile-menu-btn" type="button" name="menu">
         <svg class="icon-mobile-nav" width="32" height="16">
           <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-menu"></use>
         </svg>
@@ -103,9 +103,9 @@
 <div class="mobile-menu-wrapper">
   <div class="mobile-menu">
     <div class="mobile-menu-container">
-      <a class="logo mobile-menu-logo" href="./index.html">energy.flow</a>
+      <a aria-label="main" class="logo mobile-menu-logo" href="./index.html">energy.flow</a>
 
-      <button class="close-mobile-menu-btn" type="button">
+      <button class="close-mobile-menu-btn" type="button" name="close">
         <svg class="icon-mobile-menu-nav" width="24" height="24">
           <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
         </svg>
@@ -115,15 +115,15 @@
     <nav>
       <ul class="mobile-nav-list">
         <li>
-          <a class="nav-link link-active" href="./index.html">Home</a>
+          <a aria-label="home" class="nav-link link-active" href="./index.html">Home</a>
         </li>
-        <li><a href="./favourite.html">Favorites</a></li>
+        <li><a aria-label="favorites" href="./favourite.html">Favorites</a></li>
       </ul>
     </nav>
 
     <ul class="mobile-social-media-list">
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.facebook.com/goITclub/"
           target="_blank"
           class="social-media-link"
@@ -134,7 +134,7 @@
         </a>
       </li>
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.instagram.com/goitclub/"
           target="_blank"
           class="social-media-link"
@@ -145,7 +145,7 @@
         </a>
       </li>
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           class="social-media-link"
@@ -224,7 +224,7 @@
 
     <div class="backdrop">
   <div class="backdrop-container">
-    <button id="form-close-btn" type="button">
+    <button name="close" id="form-close-btn" type="button">
       <svg class="form-close-btn-icon" width="24" height="24">
         <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
       </svg>
@@ -265,7 +265,7 @@
         id="user-comment"
         placeholder="Your comment"
       ></textarea>
-      <button class="form-send-btn" type="submit">Send</button>
+      <button name="send" class="form-send-btn" type="submit">Send</button>
     </form>
   </div>
 </div>

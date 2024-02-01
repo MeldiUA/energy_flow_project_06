@@ -3,7 +3,7 @@ import{a as m,i as b}from"./vendor-ce9f25a7.js";document.addEventListener("DOMCo
             <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>`)}function N(e,s){const t=`
     <div class="exr-card-cont">
-      <button id="close-card" type="button" class="close-card-button">
+      <button name="close" id="close-card" type="button" class="close-card-button">
       <svg class="close-card-icon">
         <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
       </svg>
@@ -67,13 +67,13 @@ import{a as m,i as b}from"./vendor-ce9f25a7.js";document.addEventListener("DOMCo
       </div>
       <p class="exr-description">${e.description}</p>
       <div class="buttons-cont">
-        <button class="add-favourite-btn">
+        <button name="add-favorurite" class="add-favourite-btn">
           Add to favourites
           <svg class="heart-icon">
             <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>
         </button>
-        <button class="give-rating-btn">Give a rating</button>
+        <button name="rating" class="give-rating-btn">Give a rating</button>
       </div>
     </div>
     </div>`;o.innerHTML=t;const a=document.querySelectorAll(".star-rating-icon");for(let i=0;i<Math.round(e.rating);++i)a[i].style.fill="#eea10c";const r=document.querySelector(".add-favourite-btn");r.addEventListener("click",function(){c?(x(e._id),r.innerHTML=`Add to favourite
@@ -87,13 +87,13 @@ import{a as m,i as b}from"./vendor-ce9f25a7.js";document.addEventListener("DOMCo
             <div class="actions_wrapper">
               <div class="workout_wrapper">
                 <span class="workout">workout</span>
-                <button data-id-del-btn="${r}" data-action="delete_fav_card" class="btn">
+                <button name="trash" data-id-del-btn="${r}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
                     <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
-              <button data-id-start-btn="${r}" data-action="start_exercise_btn" class="btn">
+              <button name="start" data-id-start-btn="${r}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-arrow"></use>
@@ -138,4 +138,4 @@ import{a as m,i as b}from"./vendor-ce9f25a7.js";document.addEventListener("DOMCo
             </div>
           </div>
         </li>`);u.cardSet.innerHTML=t.join("")},U=e=>{const s=e.target.closest('[data-action="start_exercise_btn"]'),t=e.target.closest('[data-action="delete_fav_card"]'),a=e.target.closest('[data-component="fav_card"]');if(!(!e.target.tagName==="BUTTON"||!t&&!s)){if(t)if(t.dataset.idDelBtn===a.dataset.idCard){const r=t.dataset.idDelBtn;x(r),y()}else return;else if(s){const r=s.dataset.idStartBtn,g=f(d).find(_=>_._id===r);R(g,!0,!0)}}},y=()=>{document.querySelector(".favourite_exercises")!==null&&(f(d).length!==0?(u.noCards.classList.add("visually-hidden"),u.cardSet.classList.remove("visually-hidden"),H(f(d)),u.cardSet.addEventListener("click",U)):(u.noCards.classList.remove("visually-hidden"),u.cardSet.classList.add("visually-hidden")))};y();export{J as g,R as h,z as p};
-//# sourceMappingURL=favourite_exercises-ac9bc5fa.js.map
+//# sourceMappingURL=favourite_exercises-ab7228cc.js.map

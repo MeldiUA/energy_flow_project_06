@@ -16,22 +16,22 @@
     <script type="module" crossorigin src="/energy_flow_project_06/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/index-eab60e90.js">
     <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/vendor-ce9f25a7.js">
-    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/favourite_exercises-ac9bc5fa.js">
+    <link rel="modulepreload" crossorigin href="/energy_flow_project_06/assets/favourite_exercises-ab7228cc.js">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/index-5e67944d.css">
     <link rel="stylesheet" href="/energy_flow_project_06/assets/vendor-e5212ee8.css">
   </head>
   <body>
     <header class="header">
   <div class="container header-row">
-    <a class="logo" href="./index.html">energy.flow</a>
+    <a aria-label="main" class="logo" href="./index.html">energy.flow</a>
 
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-list-item">
-          <a class="nav-link active" id="homeLink" href="./index.html">Home</a>
+          <a aria-label="home" class="nav-link active" id="homeLink" href="./index.html">Home</a>
         </li>
         <li class="nav-list-item">
-          <a class="nav-link" id="favoritesLink" href="./favourite.html"
+          <a aria-label="favorites" class="nav-link" id="favoritesLink" href="./favourite.html"
             >Favorites</a
           >
         </li>
@@ -64,7 +64,7 @@
       </div>
       <ul class="social-media-list">
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.facebook.com/goITclub/"
             target="_blank"
             class="social-media-link"
@@ -75,7 +75,7 @@
           </a>
         </li>
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.instagram.com/goitclub/"
             target="_blank"
             class="social-media-link"
@@ -86,7 +86,7 @@
           </a>
         </li>
         <li>
-          <a
+          <a aria-label="social-media"
             href="https://www.youtube.com/c/GoIT"
             target="_blank"
             class="social-media-link"
@@ -97,7 +97,7 @@
           </a>
         </li>
       </ul>
-      <button class="open-mobile-menu-btn" type="button">
+      <button class="open-mobile-menu-btn" type="button" name="menu">
         <svg class="icon-mobile-nav" width="32" height="16">
           <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-menu"></use>
         </svg>
@@ -110,9 +110,9 @@
 <div class="mobile-menu-wrapper">
   <div class="mobile-menu">
     <div class="mobile-menu-container">
-      <a class="logo mobile-menu-logo" href="./index.html">energy.flow</a>
+      <a aria-label="main" class="logo mobile-menu-logo" href="./index.html">energy.flow</a>
 
-      <button class="close-mobile-menu-btn" type="button">
+      <button class="close-mobile-menu-btn" type="button" name="close">
         <svg class="icon-mobile-menu-nav" width="24" height="24">
           <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
         </svg>
@@ -122,15 +122,15 @@
     <nav>
       <ul class="mobile-nav-list">
         <li>
-          <a class="nav-link link-active" href="./index.html">Home</a>
+          <a aria-label="home" class="nav-link link-active" href="./index.html">Home</a>
         </li>
-        <li><a href="./favourite.html">Favorites</a></li>
+        <li><a aria-label="favorites" href="./favourite.html">Favorites</a></li>
       </ul>
     </nav>
 
     <ul class="mobile-social-media-list">
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.facebook.com/goITclub/"
           target="_blank"
           class="social-media-link"
@@ -141,7 +141,7 @@
         </a>
       </li>
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.instagram.com/goitclub/"
           target="_blank"
           class="social-media-link"
@@ -152,7 +152,7 @@
         </a>
       </li>
       <li>
-        <a
+        <a aria-label="social-media"
           href="https://www.youtube.com/c/GoIT"
           target="_blank"
           class="social-media-link"
@@ -222,9 +222,9 @@
     <h2 class="exercises-title">Exercises</h2>
     <div class="filter-search-wrap">
         <ul class="filters">
-            <li class="filter"><button class="muscles-btn active-btn" type="button">Muscles</button></li>
-            <li class="filter"><button class="bodyparts-btn not-active-btn" type="button">Body parts</button></li>
-            <li class="filter"><button class="equipment-btn not-active-btn" type="button">Equipment</button></li>
+            <li class="filter"><button name="Muscles" class="muscles-btn active-btn" type="button">Muscles</button></li>
+            <li class="filter"><button name="Body parts" class="bodyparts-btn not-active-btn" type="button">Body parts</button></li>
+            <li class="filter"><button name="Equipmen" class="equipment-btn not-active-btn" type="button">Equipment</button></li>
         </ul>
         <form class="search-form" id="search-form">
             <div class="input-container">
@@ -235,7 +235,7 @@
                 autocomplete="off"
                 placeholder="Search"
               />
-              <button class="search-button" type="submit"><svg width="18" height="18" stroke="#1B1B1B">
+              <button name="search" class="search-button" type="submit"><svg width="18" height="18" stroke="#1B1B1B">
                 <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-search"></use>
               </svg></button>
             </div>
@@ -283,7 +283,7 @@
     <div class="nav-address-wrap">
       <div class="nav-container">
         <nav>
-          <a href="./index.html" target="_blank" class="footer-logo-item">
+          <a aria-label="main" href="./index.html" target="_blank" class="footer-logo-item">
             energy.flow
           </a>
         </nav>
@@ -291,21 +291,21 @@
         <address class="footer-address">
           <ul class="footer-contacts-list">
             <li class="footer-contact-item">
-              <a href="https://www.facebook.com/goITclub/" target="_blank">
+              <a aria-label="social-media" href="https://www.facebook.com/goITclub/" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-contact-item">
-              <a href="https://www.instagram.com/goitclub/" target="_blank">
+              <a aria-label="social-media" href="https://www.instagram.com/goitclub/" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-contact-item">
-              <a href="https://www.youtube.com/c/GoIT" target="_blank">
+              <a aria-label="social-media" href="https://www.youtube.com/c/GoIT" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-youtube"></use>
                 </svg>
@@ -325,16 +325,17 @@
           autocomplete="off"
           id="subscriptionForm"
         >
-          <label>
+          <label for="footer-input">
             Subscribe and learn about new exercises!
             <input
               type="email"
               name="email"
               placeholder="Email"
               class="footer-input"
+              id="footer-input"
             />
           </label>
-          <button type="submit" class="footer-send-button" disabled>
+          <button name="send-email" type="submit" class="footer-send-button" disabled>
             Send
           </button>
         </form>
@@ -344,9 +345,9 @@
     <div class="footer-rights">
       <p>Energy Flow. All rights reserved.</p>
       <ul class="footer-rights-list">
-        <li><a href="">Privacy Policy</a></li>
+        <li><a aria-label="privacy" href="">Privacy Policy</a></li>
         <li>/</li>
-        <li><a href="">Terms of Service</a></li>
+        <li><a aria-label="terms" href="">Terms of Service</a></li>
       </ul>
     </div>
   </div>
@@ -356,7 +357,7 @@
   <div class="wellcome">
     <img class="modal-img" src="/energy_flow_project_06/assets/man_1-c5369bfb.png" alt="some man" />
     <div class="modal-text">
-      <a
+      <a aria-label="close"
         class="close"
         href="#"
         onclick="document.getElementById('wellcom-modal').style.opacity='0'; return false;"
@@ -367,7 +368,7 @@
       </a>
       <p class="q-text">Interested in our development team?</p>
       <p class="a-text">Then look, there are only the best!</p>
-      <a class="team-btn" href="./ourTeam.html" target="_blank"
+      <a aria-label="team" class="team-btn" href="./ourTeam.html" target="_blank"
         >Look here
         <span>
           <svg class="features-icon" width="13" height="13">
@@ -381,7 +382,7 @@
 
     <div class="backdrop">
   <div class="backdrop-container">
-    <button id="form-close-btn" type="button">
+    <button name="close" id="form-close-btn" type="button">
       <svg class="form-close-btn-icon" width="24" height="24">
         <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-x"></use>
       </svg>
@@ -422,7 +423,7 @@
         id="user-comment"
         placeholder="Your comment"
       ></textarea>
-      <button class="form-send-btn" type="submit">Send</button>
+      <button name="send" class="form-send-btn" type="submit">Send</button>
     </form>
   </div>
 </div>
