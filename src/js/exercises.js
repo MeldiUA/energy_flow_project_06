@@ -31,22 +31,20 @@ async function fetchFilter() {
       dataSource: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}`,
       pageSize: limit,
       pageRange: 5,
-      pageNumber:1,
+      pageNumber: 1,
       alias: {
         pageNumber: 'page',
-        pageSize: 'limit'
+        pageSize: 'limit',
       },
       locator: 'results',
       totalNumberLocator: function (response) {
-        // Визначення загальної кількості елементів у відповіді сервера
-        return limit*response.totalPages; 
+        return limit * response.totalPages;
       },
-      callback: function (data, pagination) {
+      callback: function (data) {
         if (data.length === 0) {
-          refs.exercises.insertAdjacentHTML(
-            'beforeend',
-            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`
-          );
+          refs.exercises.innerHTML =
+            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+            refs.navButtons.innerHTML = "";
           return;
         }
         makeCards(data);
@@ -125,22 +123,20 @@ async function loadExercises(event) {
       dataSource: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}`,
       pageSize: limit,
       pageRange: 5,
-      pageNumber:1,
+      pageNumber: 1,
       alias: {
         pageNumber: 'page',
-        pageSize: 'limit'
+        pageSize: 'limit',
       },
       locator: 'results',
       totalNumberLocator: function (response) {
-        // Визначення загальної кількості елементів у відповіді сервера
-        return limit*response.totalPages; 
+        return limit * response.totalPages;
       },
-      callback: function (data, pagination) {
+      callback: function (data) {
         if (data.length === 0) {
-          refs.exercises.insertAdjacentHTML(
-            'beforeend',
-            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`
-          );
+          refs.exercises.innerHTML =
+            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+            refs.navButtons.innerHTML = "";
           return;
         }
         makeExercisesCards(data);
@@ -224,6 +220,9 @@ refs.searchForm.addEventListener('submit', async event => {
   event.preventDefault();
   keyWord = event.target.searchQuery.value.trim();
   event.target.reset();
+  if(filter === 'Body parts') {
+    filter = filter.slice(0,-1).replace(' ', '');
+  }
   $(async function () {
     $('#pagination-container').pagination({
       activeClassName: 'active-nav-button',
@@ -231,22 +230,20 @@ refs.searchForm.addEventListener('submit', async event => {
       dataSource: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&keyword=${keyWord}`,
       pageSize: limit,
       pageRange: 5,
-      pageNumber:1,
+      pageNumber: 1,
       alias: {
         pageNumber: 'page',
-        pageSize: 'limit'
+        pageSize: 'limit',
       },
       locator: 'results',
       totalNumberLocator: function (response) {
-        return limit*response.totalPages; 
+        return limit * response.totalPages;
       },
-      callback: function (data, pagination) {
+      callback: function (data) {
         if (data.length === 0) {
-          console.log(data)
-          refs.exercises.insertAdjacentHTML(
-            'beforeend',
-            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`
-          );
+          refs.exercises.innerHTML =
+            `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+            refs.navButtons.innerHTML = "";
           return;
         }
         makeExercisesCards(data);
