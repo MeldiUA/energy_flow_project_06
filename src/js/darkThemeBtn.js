@@ -2,9 +2,10 @@ let checkbox = null;
 const themeStylesheet = document.getElementById('theme-stylesheet');
 
 document.addEventListener('DOMContentLoaded', function () {
-  
-  checkbox = window.innerWidth > 1440 ? document.getElementById('checkbox') : document.getElementById('theme-checkbox')
-
+  checkbox =
+    window.innerWidth > 1440
+      ? document.getElementById('checkbox')
+      : document.getElementById('theme-checkbox');
 
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
@@ -12,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     setLightTheme();
   }
-
-
 
   checkbox.addEventListener('change', function () {
     if (checkbox.checked) {
@@ -27,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function setDarkTheme() {
     themeStylesheet.href = './css/dark-theme.css';
-checkbox.checked = true;
+    checkbox.checked = true;
   }
 
   function setLightTheme() {
-    themeStylesheet.href = './css/index.css'; 
+    themeStylesheet.href = './css/index.css';
   }
 });

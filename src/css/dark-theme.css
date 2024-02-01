@@ -40,8 +40,13 @@
   --description-color: rgba(27, 27, 27, 0.4);
 }
 
-.mobile-menu {
+.mobile-menu,
+.quote-wrapper {
   background-color: #1b1b1b;
+}
+
+.quote-110-wrapper {
+    background: #1b1b1b;
 }
 
 .section {
@@ -82,4 +87,109 @@
 
 .hero-img-container {
   z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  bottom: -75px;
+  background-color: #7e847f;
+}
+
+.exercises-section::before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 111.9%;
+  height: 20px;
+  top: -20px;
+  left: -20px;
+  background-color: #7e847f;
+}
+
+.min-110::before {
+  content: '';
+  display: block;
+  position: relative;
+  width: 111.9%;
+  height: 20px;
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  background-color: #7e847f;
+}
+
+.footer::before,
+.footer::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 111.9%;
+  height: 20px;
+  left: -20px;
+  right: -20px;
+  top: -20px;
+  background-color: #7e847f;
+}
+
+.exr-card-cont {
+  background: #1b1b1b;
+}
+
+.close-card-icon,
+.form-close-btn-icon {
+  stroke: #f6f6f6;
+}
+
+.exercise-name,
+.rating-score,
+.exr-info,
+.exr-description,
+.rating-star-value {
+  color: #f6f6f6;
+}
+
+.info-label,
+.backdrop-form-text {
+  color: rgba(246, 246, 246, 0.4);
+}
+
+.give-rating-btn {
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+  background-color: #1b1b1b;
+}
+
+.backdrop-container {
+  background: #1b1b1b;
+}
+
+.rating-star-icons {
+  fill: rgba(246, 246, 246, 0.4);
+}
+
+@media screen and (min-width: 768px) {
+  .hero::after {
+    position: relative;
+    top: 20px;
+  }
+
+  .exercises-section::before,
+  .min-110::before,
+  .footer::before,
+  .footer::after {
+    width: 104.9%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+    .exercises-section::before,
+    .min-110::before,
+    .footer::before,
+    .footer::after {
+      width: 103%;
+    }
 }
