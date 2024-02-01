@@ -1,4 +1,4 @@
- import { handlerOpenRate } from './rate';
+import { handlerOpenRate } from './rate';
 import * as localStorageLogic from './localalStorageLogical';
 const cardBackdrop = document.querySelector('.exr-card-backdrop');
 let isFavourite = false;
@@ -148,6 +148,11 @@ function renderModal(data) {
   });
 
   document.getElementById('close-card').addEventListener('click', () => {
+    cardBackdrop.classList.remove('card-is-open');
+    document.body.classList.remove('not-scrollable');
+  });
+
+  document.querySelector('.exr-card-backdrop').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
   });
