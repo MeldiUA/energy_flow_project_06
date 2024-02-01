@@ -103,6 +103,7 @@
 
   .hero-img-container {
     width: 248px;
+    max-width: 768px;
     height: 900px;
     padding: 0 32px 64px 20px;
     background-image: url(../images/hero-img/tablet-hero.jpg);
@@ -122,9 +123,11 @@
   }
 
   .hero-text-container {
+    max-width: 768px;
     padding: 0 32px 192px 32px;
     border-radius: 0px 50px 50px 50px;
     width: 488px;
+    max-width: 768px;
     height: 900px;
     gap: 25px;
   }
@@ -151,6 +154,7 @@
   .hero-text-container {
     width: 704px;
     height: 884px;
+    max-width: 1440px;
   }
 
   .hero-img-container {
@@ -159,6 +163,7 @@
   }
 
   .hero-text-container {
+    max-width: 1440px;
     padding: 0 33px 241px 32px;
   }
 
