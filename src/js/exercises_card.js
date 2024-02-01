@@ -1,5 +1,6 @@
 import { handlerOpenRate } from './rate';
 import * as localStorageLogic from './localalStorageLogical';
+import { checkStorage } from './favourite_exercises';
 
 const cardBackdrop = document.querySelector('.exr-card-backdrop');
 let isFavourite = false;
@@ -146,14 +147,12 @@ function renderModal(data, isFavouritePage) {
           </svg>`;
       isFavourite = false;
     }
+    checkStorage();
   });
 
   document.getElementById('close-card').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
-    if(isFavouritePage){
-      window.open('./favourite.html')
-    }
   });
 
   document.querySelector('.give-rating-btn').addEventListener('click', () => {

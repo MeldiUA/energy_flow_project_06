@@ -169,7 +169,9 @@ const onClick = e => {
 
 // check storage logic
 
-const checkStorage = () => {
+export const checkStorage = () => {
+
+  if(document.querySelector(".favourite_exercises") !== null){
   const isFavsExist = getFav(LS_FAV) !== null;
 
   if (!isFavsExist) {
@@ -181,6 +183,7 @@ const checkStorage = () => {
     renderCards(getFav(LS_FAV));
     refs.cardSet.addEventListener('click', onClick);
   }
+}
 };
 
 checkStorage();
