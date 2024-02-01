@@ -5,7 +5,7 @@
 }
 
 .hero-img-container {
-  width: 335px;
+  max-width: 335px;
   height: 387px;
   display: flex;
   align-items: end;
@@ -50,7 +50,7 @@
 .hero-text-container {
   background-color: #fff;
   border-radius: 30px;
-  width: 335px;
+  max-width: 335px;
   height: 365px;
   display: flex;
   flex-direction: column;
