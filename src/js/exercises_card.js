@@ -17,7 +17,11 @@ function capitalizeFirstLetter(string) {
   return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
 }
 
-export default function handlerStartBtn(exercise, isFav = false, isFavouritePage = false) {
+export default function handlerStartBtn(
+  exercise,
+  isFav = false,
+  isFavouritePage = false
+) {
   isFavourite = isFav;
   if (!isFavourite) {
     savedExercises.forEach(element => {
@@ -25,7 +29,7 @@ export default function handlerStartBtn(exercise, isFav = false, isFavouritePage
     });
   }
 
-  renderModal(exercise, isFavouritePage);
+  renderModal(exercise);
   cardBackdrop.classList.add('card-is-open');
   document.body.classList.add('not-scrollable');
 
@@ -123,11 +127,11 @@ function renderModal(data, isFavouritePage) {
     </div>
     </div>`;
   cardBackdrop.innerHTML = markup;
-  const arrStar = document.querySelectorAll(".star-rating-icon");
-  for(let i = 0; i < Math.round(data.rating); ++i){
-    arrStar[i].style.fill = "#eea10c";
+  const arrStar = document.querySelectorAll('.star-rating-icon');
+  for (let i = 0; i < Math.round(data.rating); ++i) {
+    arrStar[i].style.fill = '#eea10c';
   }
- 
+
   const addFavBtn = document.querySelector('.add-favourite-btn');
 
   addFavBtn.addEventListener('click', function () {
@@ -155,9 +159,14 @@ function renderModal(data, isFavouritePage) {
     document.body.classList.remove('not-scrollable');
   });
 
+  document.querySelector('.exr-card-backdrop').addEventListener('click', () => {
+    cardBackdrop.classList.remove('card-is-open');
+    document.body.classList.remove('not-scrollable');
+  });
+
   document.querySelector('.give-rating-btn').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
-     handlerOpenRate(data._id);
+    handlerOpenRate(data._id);
   });
 }

@@ -51,7 +51,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -30%);
   z-index: 999;
   transition: transform 400ms ease-in-out;
   padding: 40px 20px;
@@ -226,6 +226,9 @@
     border-radius: 30px;
     letter-spacing: -0.1px;
   }
+  .exr-card-cont {
+  transform: translate(-50%, -40%);
+}
 }
 
 /* Desktop */
