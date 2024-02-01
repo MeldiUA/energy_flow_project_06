@@ -1,6 +1,5 @@
-body {
-  padding-top: 96px;
-  margin: 0;
+.quote-110 {
+  margin-top: 96px;
 }
 
 .quote-110-container {
@@ -62,9 +61,8 @@ body {
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-
-  body {
-    padding-top: 180px;
+  .quote-110 {
+    margin-top: 180px;
   }
 
   .quote-110-container {
