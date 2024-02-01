@@ -160,10 +160,26 @@
   line-height: 1.5;
 }
 
-.active-link {
-  padding: 6px 26px;
+.nav-link.active {
   color: var(--black-color);
-  background-color: #fff;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  padding: 6px 26px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .mobile-social-media-list {
@@ -266,28 +282,6 @@
 
   .open-mobile-menu-btn {
     display: none;
-  }
-
-  .nav-link.active {
-    color: var(--black-color);
-    background: white;
-    border-radius: 30px;
-    display: flex;
-    padding: 6px 26px;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      transform: scale(0.9);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
   }
   /**======================== STICKY NAVIGATION =======================**/
   .header {

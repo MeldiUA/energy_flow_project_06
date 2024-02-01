@@ -1,16 +1,22 @@
 //============================= MAIN-MENU-WORK =============================
 document.addEventListener('DOMContentLoaded', function () {
-  var currentPage = window.location.href;
+  let currentPage = window.location.href;
 
-  var homeLink = document.getElementById('homeLink');
-  var favoritesLink = document.getElementById('favoritesLink');
+  let homeLink = document.getElementById('homeLink');
+  let favoritesLink = document.getElementById('favoritesLink');
+  let mobHomeLink = document.getElementById('mobileHomeLink');
+  let mobFavoritesLink = document.getElementById('mobileFavoritesLink');
 
   if (currentPage.includes('index.html')) {
     homeLink.classList.add('active');
     favoritesLink.classList.remove('active');
+    mobHomeLink.classList.add('active');
+    mobFavoritesLink.classList.remove('active');
   } else if (currentPage.includes('favourite.html')) {
     favoritesLink.classList.add('active');
     homeLink.classList.remove('active');
+    mobFavoritesLink.classList.add('active');
+    mobHomeLink.classList.remove('active');
   }
 });
 //============================ /MAIN-MENU-WORK =============================
