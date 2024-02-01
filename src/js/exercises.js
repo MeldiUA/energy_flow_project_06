@@ -167,7 +167,7 @@ async function makeExercisesCards(response) {
           <span class="rating">
               ${rating}
               <svg fill="#EEA10C" width="18" height="18">
-                  <use href="../../images/icon.svg#icon-star"></use>
+                  <use href="./images/icon.svg#icon-star"></use>
               </svg>
           </span>
           <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
@@ -180,7 +180,7 @@ async function makeExercisesCards(response) {
       <div>
         <div class="icon-man-wrap">
           <svg class="icon-man" fill="white" width="15" height="15">
-          <use href="./images/icon.svg#icon-man"></use>
+          <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-man"></use>
           </svg>
         </div>
         <h2 class="exercise-name">${name[0].toUpperCase() + name.slice(1)}</h2>
