@@ -162,7 +162,7 @@ async function makeExercisesCards(response) {
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-star"></use>
               </svg>
           </span>
-          <button data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
+          <button name="start" data-action="start_exercise_btn" data-id-start-btn="${_id}" class="details-link">
           Start
               <svg stroke="#1B1B1B"  width="14" height="14">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-arrow"></use>

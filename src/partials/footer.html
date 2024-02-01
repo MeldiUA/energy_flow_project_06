@@ -3,7 +3,7 @@
     <div class="nav-address-wrap">
       <div class="nav-container">
         <nav>
-          <a href="./index.html" target="_blank" class="footer-logo-item">
+          <a aria-label="main" href="./index.html" target="_blank" class="footer-logo-item">
             energy.flow
           </a>
         </nav>
@@ -11,21 +11,21 @@
         <address class="footer-address">
           <ul class="footer-contacts-list">
             <li class="footer-contact-item">
-              <a href="https://www.facebook.com/goITclub/" target="_blank">
+              <a aria-label="social-media" href="https://www.facebook.com/goITclub/" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="./images/icon.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-contact-item">
-              <a href="https://www.instagram.com/goitclub/" target="_blank">
+              <a aria-label="social-media" href="https://www.instagram.com/goitclub/" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="./images/icon.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="footer-contact-item">
-              <a href="https://www.youtube.com/c/GoIT" target="_blank">
+              <a aria-label="social-media" href="https://www.youtube.com/c/GoIT" target="_blank">
                 <svg width="20" height="20" class="footer-contact-icon">
                   <use href="./images/icon.svg#icon-youtube"></use>
                 </svg>
@@ -45,16 +45,17 @@
           autocomplete="off"
           id="subscriptionForm"
         >
-          <label>
+          <label for="footer-input">
             Subscribe and learn about new exercises!
             <input
               type="email"
               name="email"
               placeholder="Email"
               class="footer-input"
+              id="footer-input"
             />
           </label>
-          <button type="submit" class="footer-send-button" disabled>
+          <button name="send-email" type="submit" class="footer-send-button" disabled>
             Send
           </button>
         </form>
@@ -64,9 +65,9 @@
     <div class="footer-rights">
       <p>Energy Flow. All rights reserved.</p>
       <ul class="footer-rights-list">
-        <li><a href="">Privacy Policy</a></li>
+        <li><a aria-label="privacy" href="">Privacy Policy</a></li>
         <li>/</li>
-        <li><a href="">Terms of Service</a></li>
+        <li><a aria-label="terms" href="">Terms of Service</a></li>
       </ul>
     </div>
   </div>

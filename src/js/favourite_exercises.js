@@ -85,13 +85,13 @@ const renderCards = arr => {
             <div class="actions_wrapper">
               <div class="workout_wrapper">
                 <span class="workout">workout</span>
-                <button data-id-del-btn="${_id}" data-action="delete_fav_card" class="btn">
+                <button name="trash" data-id-del-btn="${_id}" data-action="delete_fav_card" class="btn">
                   <svg width="16" height="16" aria-label="trash icon">
                     <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-trash"></use>
                   </svg>
                 </button>
               </div>
-              <button data-id-start-btn="${_id}" data-action="start_exercise_btn" class="btn">
+              <button name="start" data-id-start-btn="${_id}" data-action="start_exercise_btn" class="btn">
                 <span class="start">start</span>
                 <svg width="16" height="16" aria-label="arrow icon">
                   <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-arrow"></use>
