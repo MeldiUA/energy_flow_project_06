@@ -13,7 +13,8 @@ formCloseBtn.addEventListener('click', () => {
   backdrop.classList.remove('is-open');
 });
 
-backdrop.addEventListener('click', () => {
+backdrop.addEventListener('click', (event) => {
+  if (event.target === backdrop)
   backdrop.classList.remove('is-open');
 });
 

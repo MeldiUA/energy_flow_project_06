@@ -172,8 +172,7 @@ const onClick = e => {
 export const checkStorage = () => {
 
   if(document.querySelector(".favourite_exercises") !== null){
-  const isFavsExist = getFav(LS_FAV) !== null;
-
+    const isFavsExist = getFav(LS_FAV).length !== 0;
   if (!isFavsExist) {
     refs.noCards.classList.remove('visually-hidden');
     refs.cardSet.classList.add('visually-hidden');

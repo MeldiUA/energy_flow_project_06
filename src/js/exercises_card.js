@@ -159,10 +159,12 @@ function renderModal(data, isFavouritePage) {
     document.body.classList.remove('not-scrollable');
   });
 
-  document.querySelector('.exr-card-backdrop').addEventListener('click', () => {
+  cardBackdrop.addEventListener('click', (event) => {
+    if (event.target === cardBackdrop){
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
-  });
+  }
+});
 
   document.querySelector('.give-rating-btn').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
