@@ -56,6 +56,7 @@ try {
           title: 'Success',
           message: 'Welcome to energy.flow world!',
         })
+        email.value = '';
 } catch (error) {
   if (error.response.status === 409) {
     iziToast.warning({
@@ -71,7 +72,6 @@ try {
     });
     }
   }
-   
 });
 
 function isValidEmail(email) {
