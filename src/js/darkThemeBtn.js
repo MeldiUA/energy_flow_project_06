@@ -1,6 +1,5 @@
 let checkbox = null;
 const themeStylesheet = document.getElementById('theme-stylesheet');
-debugger;
 document.addEventListener('DOMContentLoaded', function () {
   checkbox =
     window.innerWidth > 1440

@@ -62,7 +62,8 @@
 }
 
 .hero-text-container,
-.exercises-section .container {
+.exercises-section .container,
+.favourite_exercises .container {
   background-color: #1b1b1b;
 }
 
@@ -102,7 +103,8 @@
 .rating-score,
 .exr-info,
 .exr-description,
-.rating-star-value {
+.rating-star-value,
+.container .section_title {
   color: #f6f6f6;
 }
 
@@ -123,6 +125,17 @@
 
 .rating-star-icons {
   fill: rgba(246, 246, 246, 0.4);
+}
+
+.favourite_exercises .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%; 
+  height: 20px; 
+  left: -20px;
+  bottom: -636.5px;
+  background-color: #7e847f;
 }
 
 @media screen and (min-width: 768px) {
@@ -153,6 +166,10 @@ body {
 }
 
 .header,
-.favourite_exercises .section {
+.favourite_exercises {
   background-color: #7e847f!important;
+}
+
+.favourite_exercises .info {
+  color: #f6f6f6;
 }
