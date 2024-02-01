@@ -70,7 +70,21 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateX(190%);
-  transition: transform 3s ease, opacity 4s ease;
+  transition: transform 2s ease, opacity 2s ease;
+}
+
+.mobile-menu-wrapper-anim {
+  animation: mobile-menu-wrapper-animation 1.5s forwards;
+}
+@keyframes mobile-menu-wrapper-animation {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    background-color: rgba(246, 246, 246, 0.2);
+    backdrop-filter: blur(8px);
+  }
 }
 
 .mobile-menu-wrapper.is-open {
@@ -78,6 +92,21 @@
   visibility: visible;
   pointer-events: auto;
   transform: translateX(0);
+}
+
+@keyframes mobile-menu-wrapper-hide-animation {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.mobile-menu-wrapper-anim-hide {
+  animation: mobile-menu-wrapper-hide-animation 1.5s forwards;
 }
 
 .mobile-menu {
@@ -90,6 +119,7 @@
   border-radius: 30px;
 
   background-color: #7e847f;
+  backdrop-filter: blur(10px);
 }
 
 .mobile-menu-container {
