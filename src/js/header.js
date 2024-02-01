@@ -24,10 +24,25 @@ const mobileMenu = document.querySelector('.mobile-menu-wrapper');
 openMenuButton.addEventListener('click', function () {
   mobileMenu.classList.add('is-open');
   document.body.classList.add('not-scrollable');
+
+  setTimeout(() => {
+    mobileMenu.classList.add('mobile-menu-wrapper-anim');
+  }, 2500);
 });
 
 closeMenuButton.addEventListener('click', function () {
-  mobileMenu.classList.remove('is-open');
   document.body.classList.remove('not-scrollable');
+  mobileMenu.classList.add('mobile-menu-wrapper-anim-hide');
+
+  setTimeout(function () {
+    mobileMenu.classList.remove('is-open');
+    mobileMenu.classList.remove('mobile-menu-wrapper-anim');
+  }, 1400);
+});
+
+mobileMenu.addEventListener('animationend', event => {
+  if (event.animationName === 'mobile-menu-wrapper-hide-animation') {
+    mobileMenu.classList.remove('mobile-menu-wrapper-anim-hide');
+  }
 });
 //=========================== /BURGER-MENU-WORK ============================
