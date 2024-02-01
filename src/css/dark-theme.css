@@ -1,0 +1,192 @@
+@import url('./common.css');
+@import url('./reset.css');
+@import url('./110min.css');
+@import url('./exercises.css');
+@import url('./exercises_card.css');
+@import url('./favourite_exercises.css');
+@import url('./favourite.css');
+@import url('./favourite_home.css');
+@import url('./footer.css');
+@import url('./header.css');
+@import url('./home.css');
+@import url('./quote.css');
+@import url('./footer.css');
+@import url('./rate.css');
+@import url('./ourTeam.css');
+@import url('./modalOurTeam.css');
+@import url('./change-theme.css');
+@import url('./scroll-to-top.css');
+
+:root {
+  font-family: DM Sans, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 400;
+
+  color: var(--black-color);
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --second-background: #e8e8e8;
+  --black-color: #1b1b1b;
+  --placeholder-text-color: rgba(27, 27, 27, 0.6);
+  --gray-color: rgba(27, 27, 27, 0.5);
+  --white-color: #f6f6f6;
+  --description-color: rgba(27, 27, 27, 0.4);
+}
+
+.mobile-menu,
+.quote-wrapper {
+  background-color: #1b1b1b;
+}
+
+.quote-110-wrapper {
+  background: #1b1b1b;
+}
+
+.section {
+  background-color: #7e847f;
+  z-index: 0;
+}
+
+.quote,
+.exercises-section,
+.min-110,
+.footer {
+  background-color: #7e847f;
+}
+
+.hero-text-container,
+.exercises-section .container,
+.favourite_exercises .container {
+  background-color: #1b1b1b;
+}
+
+.sticky-animation .header {
+  background: #1b1b1b;
+}
+
+.sticky-animation .icon-mobile-nav {
+  stroke: #f6f6f6;
+}
+
+.sticky-animation .icon {
+  fill: #f6f6f6;
+}
+
+.sticky-animation .logo,
+.hero-title,
+.hero-text,
+.exercises-title {
+  color: #f6f6f6;
+}
+
+.hero-img-container {
+  z-index: 1;
+}
+
+.exr-card-cont {
+  background: #1b1b1b;
+}
+
+.close-card-icon,
+.form-close-btn-icon {
+  stroke: #f6f6f6;
+}
+
+.exercise-name,
+.rating-score,
+.exr-info,
+.exr-description,
+.rating-star-value,
+.container .section_title {
+  color: #f6f6f6;
+}
+
+.info-label,
+.backdrop-form-text {
+  color: rgba(246, 246, 246, 0.4);
+}
+
+.give-rating-btn {
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+  background-color: #1b1b1b;
+}
+
+.backdrop-container {
+  background: #1b1b1b;
+}
+
+.rating-star-icons {
+  fill: rgba(246, 246, 246, 0.4);
+}
+
+.favourite_exercises .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%; 
+  height: 20px; 
+  left: +20px;
+  bottom: -636.5px;
+  background-color: #7e847f;
+}
+
+@media screen and (min-width: 768px) {
+  .hero::after {
+    position: relative;
+    top: 20px;
+  }
+
+  .exercises-section::before,
+  .min-110::before,
+  .footer::before,
+  .footer::after {
+    width: 104.9%;
+  }
+
+  .social-media-link {
+    fill: #1b1b1b;
+    border-color: #1b1b1b;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .exercises-section::before,
+  .min-110::before,
+  .footer::before,
+  .footer::after {
+    width: 103%;
+  }
+
+  body {
+    padding: 0;
+  }
+}
+
+body {
+  background-color: #7e847f;
+}
+
+/* .header,
+.favourite_exercises {
+  background-color: #7e847f!important;
+} */
+
+.favourite_exercises .info {
+  color: #f6f6f6;
+}
+
+.fa-moon {
+  stroke: #1b1b1b
+}
+
+.icon-mobile-nav {
+  stroke: #1b1b1b;
+}
