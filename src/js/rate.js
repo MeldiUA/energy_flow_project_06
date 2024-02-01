@@ -13,6 +13,10 @@ formCloseBtn.addEventListener('click', () => {
   backdrop.classList.remove('is-open');
 });
 
+backdrop.addEventListener('click', () => {
+  backdrop.classList.remove('is-open');
+});
+
 const ratingWrapper = document.querySelector('.rating-wrapper');
 const ratingStarValue = document.querySelector('.rating-star-value');
 

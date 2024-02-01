@@ -40,6 +40,20 @@
   background-color: #7e847f;
   position: relative;
   margin-bottom: 40px;
+  
+}
+.teammate-list.second .teammate-description {
+    background-color: #E8E8E8;
+}   
+
+.teammate-list.second .teammate-description h3 {
+    color: #1B1B1B;
+}
+.teammate-list.second .teammate-position {
+    color: rgba(27, 27, 27, 0.60);
+}
+.teammate-list.second .teammate-city {
+    color: #1B1B1B;
 }
 
 .teammate-description h3 {
@@ -145,6 +159,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    column-gap: 50px;
   }
   .header-container h2 span {
     color: #1b1b1b;
@@ -155,8 +170,14 @@
   .team-descripton {
     padding: 40px 70px;
   }
+  .teammate-list.second .teammate-list-item:last-child {
+    transform: translateX(190.5px);
+  }
 }
 @media screen and (min-width: 1440px) {
+    .teammate-list.second .teammate-list-item:last-child {
+    transform: translateX(0);
+  }
   .header-container {
     padding: 0 320px;
   }
@@ -164,9 +185,7 @@
     padding: 40px 100px;
   }
   .teammate-list {
-    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     column-gap: 100px;
   }
   .teammate-list.first {

@@ -16,7 +16,11 @@ function capitalizeFirstLetter(string) {
   return `${string.charAt(0).toUpperCase()}${string.slice(1)}`;
 }
 
-export default function handlerStartBtn(exercise, isFav = false, isFavouritePage = false) {
+export default function handlerStartBtn(
+  exercise,
+  isFav = false,
+  isFavouritePage = false
+) {
   isFavourite = isFav;
   if (!isFavourite) {
     savedExercises.forEach(element => {
@@ -122,14 +126,15 @@ function renderModal(data, isFavouritePage) {
     </div>
     </div>`;
   cardBackdrop.innerHTML = markup;
-  const arrStar = document.querySelectorAll(".star-rating-icon");
-  for(let i = 0; i < Math.round(data.rating); ++i){
-    arrStar[i].style.fill = "#eea10c";
+  const arrStar = document.querySelectorAll('.star-rating-icon');
+  for (let i = 0; i < Math.round(data.rating); ++i) {
+    arrStar[i].style.fill = '#eea10c';
   }
- 
+
   const addFavBtn = document.querySelector('.add-favourite-btn');
 
   addFavBtn.addEventListener('click', function () {
+    console.log(isFavourite);
     if (!isFavourite) {
       savedExercises.push(data);
       localStorageLogic.setFav(savedExercises);
@@ -139,26 +144,35 @@ function renderModal(data, isFavouritePage) {
           </svg>`;
       isFavourite = true;
     } else {
+      var currentPagee = window.location.href;
       localStorageLogic.removeFromFav(data._id);
       addFavBtn.innerHTML = `Add to favourite
           <svg class="heart-icon">
             <use href="/energy_flow_project_06/assets/icon-c8fc18a4.svg#icon-heart"></use>
           </svg>`;
       isFavourite = false;
+      if (currentPagee.includes('favourite.html')) {
+        location.reload();
+      }
     }
   });
 
   document.getElementById('close-card').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
-    if(isFavouritePage){
-      window.open('./favourite.html')
+    if (isFavouritePage) {
+      window.open('./favourite.html');
     }
+  });
+
+  document.querySelector('.exr-card-backdrop').addEventListener('click', () => {
+    cardBackdrop.classList.remove('card-is-open');
+    document.body.classList.remove('not-scrollable');
   });
 
   document.querySelector('.give-rating-btn').addEventListener('click', () => {
     cardBackdrop.classList.remove('card-is-open');
     document.body.classList.remove('not-scrollable');
-     handlerOpenRate(data._id);
+    handlerOpenRate(data._id);
   });
 }
