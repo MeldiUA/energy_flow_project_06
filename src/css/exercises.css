@@ -339,6 +339,7 @@
   }
   .exercises-section .container {
     padding: 64px 48px;
+    border-radius: 50px;
   }
   .filter-search-wrap {
     display: flex;
