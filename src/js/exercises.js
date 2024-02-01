@@ -1,5 +1,3 @@
-import axios from 'axios';
-import * as api from './api';
 import handlerStartBtn from './exercises_card.js';
 
 const refs = {
@@ -10,7 +8,6 @@ const refs = {
   exercisesTitle: document.querySelector('.exercises-title'),
   searchForm: document.querySelector('.search-form'),
 };
-
 let limit = 0;
 let searchQuery = 'Muscles';
 let keyWord = '';
@@ -31,19 +28,18 @@ async function fetchFilter() {
     $('#pagination-container').pagination({
       activeClassName: 'active-nav-button',
       ulClassName: 'nav-buttons',
+      dataSource: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}`,
       pageSize: limit,
-      dataSource: function (done) {
-        $.ajax({
-          type: 'GET',
-          url: `https://energyflow.b.goit.study/api/filters?filter=${searchQuery}&limit=${300}`,
-          success: function (response) {
-            refs.navButtons.innerHTML = '';
-            done(response.results);
-          },
-          error: function () {
-            console.log('Помилка запиту даних');
-          },
-        });
+      pageRange: 5,
+      pageNumber:1,
+      alias: {
+        pageNumber: 'page',
+        pageSize: 'limit'
+      },
+      locator: 'results',
+      totalNumberLocator: function (response) {
+        // Визначення загальної кількості елементів у відповіді сервера
+        return limit*response.totalPages; 
       },
       callback: function (data, pagination) {
         if (data.length === 0) {
@@ -126,19 +122,18 @@ async function loadExercises(event) {
     $('#pagination-container').pagination({
       activeClassName: 'active-nav-button',
       ulClassName: 'nav-buttons',
+      dataSource: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}`,
       pageSize: limit,
-      dataSource: function (done) {
-        $.ajax({
-          type: 'GET',
-          url: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&limit=${300}`,
-          success: function (response) {
-            refs.navButtons.innerHTML = '';
-            done(response.results);
-          },
-          error: function () {
-            console.log('Помилка запиту даних');
-          },
-        });
+      pageRange: 5,
+      pageNumber:1,
+      alias: {
+        pageNumber: 'page',
+        pageSize: 'limit'
+      },
+      locator: 'results',
+      totalNumberLocator: function (response) {
+        // Визначення загальної кількості елементів у відповіді сервера
+        return limit*response.totalPages; 
       },
       callback: function (data, pagination) {
         if (data.length === 0) {
@@ -214,7 +209,7 @@ async function makeExercisesCards(response) {
 refs.exercises.addEventListener('click', event => {
   const startBtn = event.target.closest('[data-action="start_exercise_btn"]');
 
-  if (!event.target.tagName === 'BUTTON' || (!startBtn)) {
+  if (!event.target.tagName === 'BUTTON' || !startBtn) {
     return;
   }
   if (startBtn) {
@@ -233,23 +228,21 @@ refs.searchForm.addEventListener('submit', async event => {
     $('#pagination-container').pagination({
       activeClassName: 'active-nav-button',
       ulClassName: 'nav-buttons',
+      dataSource: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&keyword=${keyWord}`,
       pageSize: limit,
-      dataSource: function (done) {
-        $.ajax({
-          type: 'GET',
-          url: `https://energyflow.b.goit.study/api/exercises?${filter.toLowerCase()}=${name}&keyword=${keyWord}&limit=${300}`,
-          success: function (response) {
-            refs.navButtons.innerHTML = '';
-            done(response.results);
-          },
-          error: function () {
-            console.log('Помилка запиту даних');
-          },
-        });
+      pageRange: 5,
+      pageNumber:1,
+      alias: {
+        pageNumber: 'page',
+        pageSize: 'limit'
+      },
+      locator: 'results',
+      totalNumberLocator: function (response) {
+        return limit*response.totalPages; 
       },
       callback: function (data, pagination) {
-        // Обробка отриманих даних та оновлення DOM
         if (data.length === 0) {
+          console.log(data)
           refs.exercises.insertAdjacentHTML(
             'beforeend',
             `<p class="no-results-paragraph">Unfortunately, <span class="no-results-span">no results</span> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`
@@ -261,4 +254,3 @@ refs.searchForm.addEventListener('submit', async event => {
     });
   });
 });
-
