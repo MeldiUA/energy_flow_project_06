@@ -1,4 +1,3 @@
-
 import handlerStartBtn from './exercises_card.js';
 
 const refs = {
@@ -207,13 +206,13 @@ async function makeExercisesCards(response) {
     })
     .join('');
 
-  refs.exercises.insertAdjacentHTML('beforeend', markup);
+  document.querySelector('.exercises').insertAdjacentHTML('beforeend', markup);
 }
 
 refs.exercises.addEventListener('click', event => {
   const startBtn = event.target.closest('[data-action="start_exercise_btn"]');
 
-  if (!event.target.tagName === 'BUTTON' || (!startBtn)) {
+  if (!event.target.tagName === 'BUTTON' || !startBtn) {
     return;
   }
   if (startBtn) {
@@ -260,4 +259,3 @@ refs.searchForm.addEventListener('submit', async event => {
     });
   });
 });
-
