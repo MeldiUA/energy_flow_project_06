@@ -1,0 +1,137 @@
+.min-110 {
+    margin: 20px 0;
+}
+
+.min-110-container {
+    max-width: 335px;
+    margin: 0 auto;
+}
+
+.min-110-wrapper {
+    position: relative;
+    background-color: var(--black-color);
+    padding: 40px 20px 40px 70px;
+    border-radius: 30px;
+}
+
+.min-110-title {
+    color: var(--white-color);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'DM Sans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 2px;
+}
+
+.min-110-norm {
+    color: var(--white-color);
+    font-family: 'DM Sans';
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.28;
+    opacity: 0.6;
+}
+
+.min-110-text {
+    color: var(--white-color);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.285;
+    opacity: 0.6;
+    margin-top: 15px;
+}
+
+.min-110-icon-box {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: rgba(246, 246, 246, 0.1);
+}
+
+.min-110-icon{
+    width: 20px;
+    height: 20px;
+    fill: var(--white-color);
+}
+
+@media screen and (min-resolution: 192dpi) {
+    .min-110-img {
+        content: url('../images/110min-imgs/110min-mobile@2x.png');
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 736px) {
+    .min-110 {
+        margin: 16px 0;
+    }
+
+    .min-110-container {
+        max-width: 736px;
+    }
+
+    .min-110-img {
+        content: url('../images/110min-imgs/110min-tablet.png');
+    }
+
+    .min-110-wrapper {
+        padding: 64px 96px 64px 114px;
+        border-radius: 50px;
+    }
+
+    .min-110-title {
+        font-size: 24px;
+        line-height: 1.333;
+    }
+
+    .min-110-text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 26px;
+    }
+
+    .min-110-icon-box {
+        top: 65px;
+        left: 64px;
+    }
+}
+
+@media screen and (min-width: 736px) and (min-resolution: 192dpi) {
+    .min-110-img {
+        content: url('../images/110min-imgs/110min-tablet@2x.png');
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1280px) {
+    .min-110-container {
+        max-width: 1408px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .min-110-img {
+        content: url('../images/110min-imgs/110min-desktop.png');
+        width: calc(100% / 2);
+        height: auto;
+    }
+
+    .min-110-wrapper {
+        padding: 64px 64px 64px 114px;
+    }
+}
+
+@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
+    .min-110-img {
+        content: url('../images/110min-imgs/110min-desktop@2x.png');
+    }
+}

@@ -1,0 +1,125 @@
+.quote-110{
+    margin-top: 88px;
+}
+
+.quote-110-container{
+    max-width: 335px;
+    margin: 0 auto;
+}
+
+.quote-110-wrapper{
+    position: relative;
+    border-radius: 30px;
+    padding: 42px 20px 40px 66px;
+    background-color: #7e847f;
+}
+
+.min-110-card{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 272px;
+    border-radius: 30px;
+    background-color: #fff;
+    padding: 0 101px;
+}
+
+.min-110-card-title{
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    margin: 15px 0 6px;
+}
+
+.min-110-card-text{
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.285;
+    opacity: 0.6;
+}
+
+.quote-110-icon{
+    width: 20px;
+    height: 20px;
+    fill: var(--black-color);
+}
+
+.quote-110-img{
+    width: 335px;
+}
+
+@media screen and (min-resolution: 192dpi) {
+    .quote-110-img {
+        content: url('../images/110quote-imgs/quote-110-mobile@2x.png');
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 736px) {
+    .quote-110{
+        margin-top: 188px;
+    }
+
+    .quote-110-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 0;
+        max-width: 736px;
+    }
+
+    .quote-110-wrapper{
+        padding: 64px 80px 64px 130px;
+    }
+
+    .quote-110-img {
+        width: 368px;
+        height: 302px;
+        content: url('../images/110quote-imgs/quote-110-tablet.png');
+    }
+
+    .min-110-card {
+        width: 368px;
+        height: 302px;
+    }
+
+}
+
+@media screen and (min-width: 736px) and (min-resolution: 192dpi) {
+    .quote-110-img {
+        content: url('../images/110quote-imgs/quote-110-tablet@2x.png');
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1408px) {
+    .quote-110-container {
+        max-width: 1408px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .quote-110-img {
+        content: url('../images/110quote-imgs/quote-110-desktop.png');
+        width: 352px;
+        height: auto;
+    }
+
+    .min-110-card{
+        min-width: calc(100% / 4);
+        height: auto;
+    }
+
+    .quote-110-wrapper {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
+    .quote-110-img {
+        content: url('../images/110quote-imgs/quote-110-desktop@2x.png');
+    }
+}
